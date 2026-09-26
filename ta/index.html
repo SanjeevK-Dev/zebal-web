@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>ஜெபல் — எந்த மொழியிலும் பேசி உங்கள் செலவுகளைக் கண்காணிக்கவும்</title>
+<meta name="description" content="ஜெபல் என்பது அனைவருக்கும் ஏற்ற செலவு கண்காணிப்பு பயன்பாடு. பேசியே செலவுகளைச் சேர்க்கவும், குழுக்களுடன் பில்களைப் பிரித்துக் கொள்ளவும், AI நுண்ணறிவுகளைப் பெறவும். ஸ்க்ரீன் ரீடர்களுடன் முழுமையாகப் பயன்படுத்தக்கூடியது.">
+
+<meta property="og:title" content="ஜெபல் — பேசி செலவுகளைக் கண்காணிக்கவும்">
+<meta property="og:description" content="பேசியே செலவுகளைச் சேர்க்கவும், குழுக்களுடன் பில்களைப் பிரித்துக் கொள்ளுங்கள், AI நுண்ணறிவுகளைப் பெறுங்கள். முழுமையாக அணுகக்கூடியது.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://zebal.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://zebal.in/ta/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zebal.in/og-image.png">
+
+<link rel="alternate" hreflang="en" href="https://zebal.in/">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA;
+    --surface: #FFFFFF;
+    --text: #1D1C1D;
+    --text-muted: #616061;
+    --primary: #0A66C2;
+    --primary-dark: #084E96;
+    --border: #E1E4E8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --text: #E3E3E3;
+      --text-muted: #A0A0A0;
+      --primary: #669DF6;
+      --primary-dark: #8AB4F8;
+      --border: #333333;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 16px 0 0; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+
+  header { text-align: center; padding: 32px 0 32px; }
+  .logo-mark { display: block; margin: 0 auto 16px; }
+
+  h1 { font-size: 2.2rem; margin: 0 0 12px; line-height: 1.25; }
+  .tagline { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 32px; }
+
+  .greeting {
+    display: none;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    min-height: 48px;
+  }
+  .cta:hover { background: var(--primary-dark); }
+  .cta:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+  section { margin: 48px 0; }
+  h2 { font-size: 1.5rem; margin: 0 0 20px; }
+
+  .features { list-style: none; padding: 0; margin: 0; }
+  .features li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .features strong { display: block; margin-bottom: 6px; font-size: 1.05rem; }
+  .features span { color: var(--text-muted); }
+
+  .faq { list-style: none; padding: 0; margin: 0; }
+  .faq li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    float: right;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq summary:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+  .faq .answer { padding: 0 20px 18px; color: var(--text-muted); }
+  .faq .answer a { color: var(--primary); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  footer a { color: var(--primary); }
+  footer a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">முதன்மை உள்ளடக்கத்திற்குச் செல்லவும்</a>
+
+<div class="container">
+
+  <div class="lang-switch">
+    <label for="langSelect">🌐</label>
+    <select id="langSelect" aria-label="மொழியைத் தேர்ந்தெடுக்கவும்"></select>
+    <noscript><a href="/">Read this page in English</a></noscript>
+  </div>
+
+  <header>
+    <svg class="logo-mark" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+      <title id="logoTitle">Zebal logo</title>
+      <rect width="64" height="64" rx="16" fill="var(--primary)"/>
+      <text x="26" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+      <rect x="45" y="30" width="3.5" height="10" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="51" y="24" width="3.5" height="22" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="57" y="34" width="3.5" height="6" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+    </svg>
+
+    <p class="greeting" id="greeting"></p>
+
+    <h1>Zebal</h1>
+    <p class="tagline">பேசியே உங்கள் செலவுகளைக் கண்காணியுங்கள் — எந்த மொழியிலும்.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sanjeev.spendify">
+      Google Play-யில் பெறுங்கள்
+    </a>
+    <p style="margin-top:20px;">
+      <a href="/ta/guide/">பயனர் வழிகாட்டியைப் படியுங்கள்</a>
+    </p>
+  </header>
+
+  <main id="main">
+
+    <section>
+      <h2>ஜெபல் என்ன செய்கிறது</h2>
+      <ul class="features">
+        <li>
+          <strong>பேசி செலவுகளைச் சேருங்கள்</strong>
+          <span>நீங்கள் எவ்வளவு செலவழித்தீர்கள் என்று சொல்லுங்கள், ஜெபல் தொகையையும் வகையையும் தானாகக் கண்டறியும். இது ஆங்கிலம், இந்தி மற்றும் பிற மொழிகளைப் புரிந்துகொள்கிறது.</span>
+        </li>
+        <li>
+          <strong>ரசீதை ஸ்கேன் செய்யுங்கள்</strong>
+          <span>உங்கள் கேமராவை ரசீதின் மீது காட்டுங்கள், ஜெபல் அதைப் படித்து ஒவ்வொரு பொருளாகவும் செலவுகளைப் பிரித்துத் தரும் — நீங்கள் ஒவ்வொன்றாகத் தட்டச்சு செய்யத் தேவையில்லை. இது உங்கள் தனிப்பட்ட செலவுகளுக்கும், குழு செலவுகளுக்கும் பயன்படும்.</span>
+        </li>
+        <li>
+          <strong>குழுக்களுடன் பில்களைப் பிரியுங்கள்</strong>
+          <span>குடும்பத்தினர், அறை பங்காளிகள் அல்லது நண்பர்களுடன் செலவுகளைப் பகிர்ந்துகொள்ளுங்கள். யார் யாருக்கு எவ்வளவு கொடுக்க வேண்டும் என்பதை ஜெபல் கணக்கிட்டு, UPI மூலம் தீர்வு செய்யும்.</span>
+        </li>
+        <li>
+          <strong>நடைமுறைக்கு ஏற்ற பட்ஜெட்கள்</strong>
+          <span>மாதாந்திர வரம்பை நிர்ணயியுங்கள், செலவிடாத தொகையை அடுத்த மாதத்திற்கு எடுத்துச் செல்லுங்கள், மேலும் உங்கள் சுழற்சி முடிவதற்கு முன் எச்சரிக்கை பெறுங்கள்.</span>
+        </li>
+        <li>
+          <strong>எளிய மொழியில் கேள்விகள் கேளுங்கள்</strong>
+          <span>"நான் எங்கு அதிகமாகச் செலவழித்தேன்?" — தட்டச்சு செய்தோ பேசியோ கேளுங்கள், பதிலைக் கேட்டு அறியுங்கள்.</span>
+        </li>
+        <li>
+          <strong>அணுகக்கூடியதாக வடிவமைக்கப்பட்டது</strong>
+          <span>முழுமையான ஸ்க்ரீன் ரீடர் ஆதரவு, சரிசெய்யக்கூடிய எழுத்து அளவு, மற்றும் டார்க் மோட். ஒவ்வொரு கட்டுப்பாடும் சரியாக லேபிளிடப்பட்டு, ஏற்ற அளவில் உள்ளது.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>அடிக்கடி கேட்கப்படும் கேள்விகள்</h2>
+      <ul class="faq">
+        <li>
+          <details>
+            <summary>ஜெபல் இலவசமா?</summary>
+            <div class="answer">
+              <p>ஆம் — ஒவ்வொரு முக்கிய அம்சமும் (செலவுகள், பட்ஜெட்கள், குழுக்கள், விஷ்லிஸ்ட் இலக்குகள்) இலவசமாகவே பயன்படுத்தலாம். AI அம்சங்கள் கிரெடிட் முறையில் இயங்குகின்றன; விருப்பமான வெகுமதி விளம்பரத்தைப் பார்ப்பதன் மூலம் மேலும் கிரெடிட்களைப் பெறலாம், அல்லது விருப்பமான சந்தாவின் மூலம் வரம்பற்ற AI பயன்பாட்டைப் பெறலாம். பயன்பாட்டைப் பயன்படுத்த எதுவும் கட்டாயமில்லை.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>எனது தரவு பாதுகாப்பானதா?</summary>
+            <div class="answer">
+              <p>உங்கள் செலவுகள் இயல்பாகவே உங்கள் சொந்த சாதனத்தில் என்க்ரிப்ட் செய்யப்பட்ட நிலையில் சேமிக்கப்படுகின்றன. ஆன்லைன் பேக்அப் விருப்பத் தேர்வு — நீங்கள் அதை இயக்கினால், புதிய தொலைபேசியில் மீட்டெடுக்க முடியும் வகையில் ஒரு நகல் Google Firebase-இல் வைக்கப்படும். முழு விவரங்களை <a href="/ta/privacy.html">தனியுரிமைக் கொள்கை</a>யில் காணலாம்.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>இது இணைய இணைப்பு இல்லாமல் வேலை செய்யுமா?</summary>
+            <div class="answer">
+              <p>தட்டச்சு செய்து செலவுகளைச் சேர்ப்பது, பார்ப்பது மற்றும் திருத்துவது ஆஃப்லைனிலும் வேலை செய்யும், ஏனெனில் உங்கள் தரவு உங்கள் சாதனத்திலேயே உள்ளது. குரல் உள்ளீடு, ரசீது ஸ்கேன், Ask AI மற்றும் AI சுருக்கங்களுக்கு இணைய இணைப்பு தேவை, ஏனெனில் அவை Google-இன் AI மூலம் செயல்படுகின்றன.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>குரல் உள்ளீடு எந்த மொழிகளைப் புரிந்துகொள்கிறது?</summary>
+            <div class="answer">
+              <p>ஆங்கிலம், இந்தி, மற்றும் பிற மொழிகள் — இயல்பாகப் பேசுங்கள், நீங்கள் சொல்வதிலிருந்து தொகை, பொருள் மற்றும் வகையை ஜெபல் தானாகக் கண்டறியும்.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>ஜெபலைப் பயன்படுத்த ஒரு குழு தேவையா?</summary>
+            <div class="answer">
+              <p>இல்லை. தனிப்பட்ட செலவு கண்காணிப்பு, பட்ஜெட்கள் மற்றும் விஷ்லிஸ்ட் இலக்குகள் எல்லாம் தனியாகவே செயல்படும். குடும்பத்தினர், அறை பங்காளிகள் அல்லது நண்பர்களுடன் பில்களைப் பிரிக்க விரும்பும்போது குழுக்கள் பயன்படும், ஆனால் அது கட்டாயமில்லை.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>ஜெபல் ஸ்க்ரீன் ரீடர் பயனர்களுக்கு அணுகக்கூடியதா?</summary>
+            <div class="answer">
+              <p>ஆம் — இது ஆரம்பத்திலிருந்தே TalkBack பயனர்களை மனதில் கொண்டு உருவாக்கப்பட்டது, பின்னால் சேர்க்கப்பட்ட அம்சமாக அல்ல. இது சரியாக என்ன உள்ளடக்குகிறது, இன்னும் என்ன செய்யவில்லை என்பதைப் பார்க்க எங்கள் <a href="/ta/accessibility.html">அணுகல்தன்மை</a> பக்கத்தைப் பார்க்கவும்.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>iOS பதிப்பு உள்ளதா?</summary>
+            <div class="answer">
+              <p>தற்போது இல்லை — ஜெபல் தற்போது Android-இல் மட்டுமே கிடைக்கிறது.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>எனது தரவை நான் நீக்க முடியுமா?</summary>
+            <div class="answer">
+              <p>ஆம், எப்போது வேண்டுமானாலும், Settings-இலிருந்து — இந்தச் சாதனத்தில் உள்ள தரவை மட்டும் அழிக்கலாம், அல்லது உங்கள் கணக்கை முழுவதுமாக (ஆன்லைன் பேக்அப் உள்பட) நீக்கிவிடலாம். ஒவ்வொரு தேர்வும் என்ன செய்யும் என்பதைப் பார்க்க <a href="/ta/privacy.html">தனியுரிமைக் கொள்கை</a>யைப் பார்க்கவும்.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/ta/guide/">பயனர் வழிகாட்டி</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/ta/privacy.html">தனியுரிமைக் கொள்கை</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/ta/terms.html">விதிமுறைகள் மற்றும் நிபந்தனைகள்</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/ta/credits.html">நன்றிகள்</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/ta/accessibility.html">அணுகல்தன்மை</a>
+    </p>
+    <p>கேள்விகள் அல்லது கருத்துகள் உள்ளதா? மின்னஞ்சல் அனுப்புங்கள் <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a></p>
+  </footer>
+
+</div>
+
+<script src="/greeting.js?v=1" defer></script>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

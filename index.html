@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>Zebal — Track expenses by voice, in any language</title>
+<meta name="description" content="Zebal is an expense tracker built for everyone. Add expenses by speaking, split bills with groups, and get AI insights. Fully accessible with screen readers.">
+
+<!-- Open Graph tags control how the link looks when shared on WhatsApp,
+     Telegram, Facebook etc. Without these a shared link shows only a bare URL. -->
+<meta property="og:title" content="Zebal — Track expenses by voice">
+<meta property="og:description" content="Add expenses by speaking, split bills with groups, get AI insights. Fully accessible.">
+<meta property="og:type" content="website">
+<!-- Shown when this link is shared on WhatsApp/Telegram/etc. Must be an
+     absolute URL (not a relative path) for most platforms to pick it up. -->
+<meta property="og:image" content="https://zebal.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://zebal.in/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zebal.in/og-image.png">
+
+<link rel="alternate" hreflang="en" href="https://zebal.in/">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/">
+
+<!-- SVG favicon — one self-contained file, no separate image asset needed.
+     Falls back fine in browsers that don't support SVG favicons; they just
+     show no icon rather than erroring. -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<style>
+  /* Colours match the app's own palette, and every text/background pair here
+     meets the WCAG AA contrast minimum of 4.5:1 — the same standard the app
+     itself was built to. */
+  :root {
+    --bg: #F6F8FA;
+    --surface: #FFFFFF;
+    --text: #1D1C1D;
+    --text-muted: #616061;
+    --primary: #0A66C2;
+    --primary-dark: #084E96;
+    --border: #E1E4E8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --text: #E3E3E3;
+      --text-muted: #A0A0A0;
+      --primary: #669DF6;
+      --primary-dark: #8AB4F8;
+      --border: #333333;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Never set a fixed px font size on body — it stops the browser's own
+       text-size setting from working, which is exactly the problem the app
+       had. rem scales with the user's preference. */
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+
+  /* Lets keyboard users jump straight to the content instead of tabbing
+     through the whole header first. Visible only when focused. */
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+
+  header { text-align: center; padding: 48px 0 32px; }
+
+  /* Lettermark badge: a rounded-square "S" with a small voice-wave accent.
+     Plain SVG shapes, not a font icon or external image — original artwork,
+     nothing traced or copied, and it stays crisp at any size/zoom level
+     since it's a vector, not a raster logo. */
+  .logo-mark { display: block; margin: 0 auto 16px; }
+
+  h1 { font-size: 2.2rem; margin: 0 0 12px; line-height: 1.25; }
+  .tagline { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 32px; }
+
+  /* Time-of-day greeting. Starts empty and hidden in the HTML — the script
+     at the bottom fills it in and reveals it, so a visitor with JavaScript
+     off simply never sees an empty gap where it would have been. */
+  .greeting {
+    display: none;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    /* 48px minimum touch target, same rule the app follows. */
+    min-height: 48px;
+  }
+  .cta:hover { background: var(--primary-dark); }
+  /* A clearly visible focus ring. Removing focus outlines is one of the most
+     common accessibility mistakes on the web. */
+  .cta:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+  section { margin: 48px 0; }
+  h2 { font-size: 1.5rem; margin: 0 0 20px; }
+
+  .features { list-style: none; padding: 0; margin: 0; }
+  .features li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .features strong { display: block; margin-bottom: 6px; font-size: 1.05rem; }
+  .features span { color: var(--text-muted); }
+
+  /* FAQ, built on <details>/<summary> rather than JavaScript — expand/
+     collapse, keyboard operation and screen reader announcement ("expanded"/
+     "collapsed") all come from the browser for free, and it degrades to
+     plain readable text if CSS fails to load for any reason. */
+  .faq { list-style: none; padding: 0; margin: 0; }
+  .faq li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  /* Default disclosure triangles look different (and in Safari, sit oddly)
+     across browsers — a plain "+" that turns into "−" is consistent
+     everywhere and reads clearly at any zoom level. */
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    float: right;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq summary:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+  .faq .answer { padding: 0 20px 18px; color: var(--text-muted); }
+  .faq .answer a { color: var(--primary); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  footer a { color: var(--primary); }
+  footer a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 16px 0 0; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="container">
+
+  <div class="lang-switch">
+    <label for="langSelect">🌐</label>
+    <select id="langSelect" aria-label="Choose a language"></select>
+    <noscript><a href="/hi/">हिंदी में पढ़ें</a></noscript>
+  </div>
+
+  <header>
+    <svg class="logo-mark" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+      <title id="logoTitle">Zebal logo</title>
+      <rect width="64" height="64" rx="16" fill="var(--primary)"/>
+      <text x="26" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+      <!-- Small voice-wave accent, a nod to "track expenses by speaking" —
+           three bars of different heights, like a sound level meter. -->
+      <rect x="45" y="30" width="3.5" height="10" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="51" y="24" width="3.5" height="22" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="57" y="34" width="3.5" height="6" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+    </svg>
+
+    <!-- Filled in by the script near the end of the page, using the
+         visitor's own device clock — so it says the right thing whatever
+         timezone they're in, not the server's. -->
+    <p class="greeting" id="greeting"></p>
+
+    <h1>Zebal</h1>
+    <p class="tagline">Track your expenses by speaking — in any language.</p>
+    <!-- REPLACE the href below with your real Play Store link once the app is
+         published. It will look like:
+         https://play.google.com/store/apps/details?id=com.sanjeev.spendify -->
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sanjeev.spendify">
+      Get it on Google Play
+    </a>
+    <p style="margin-top:20px;">
+      <a href="guide/">Read the user guide</a>
+    </p>
+  </header>
+
+  <main id="main">
+
+    <section>
+      <h2>What Zebal does</h2>
+      <ul class="features">
+        <li>
+          <strong>Speak your expenses</strong>
+          <span>Say what you spent and Zebal works out the amount and category for you. It understands English, Hindi, and other languages.</span>
+        </li>
+        <li>
+          <strong>Scan a receipt</strong>
+          <span>Point your camera at a receipt and Zebal reads it for you, splitting it into item-wise expenses instead of you typing each one out. Works for your own expenses and for group expenses too.</span>
+        </li>
+        <li>
+          <strong>Split bills with groups</strong>
+          <span>Share expenses with family, flatmates or friends. Zebal works out who owes what, and settles up over UPI.</span>
+        </li>
+        <li>
+          <strong>Budgets that make sense</strong>
+          <span>Set a monthly limit, carry unspent money forward, and get a warning before your cycle ends.</span>
+        </li>
+        <li>
+          <strong>Ask questions in plain language</strong>
+          <span>"Where did I spend the most?" — ask by typing or speaking, and hear the answer read back to you.</span>
+        </li>
+        <li>
+          <strong>Built to be accessible</strong>
+          <span>Full screen reader support, adjustable text size, and a dark mode. Every control is properly labelled and sized.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+      <ul class="faq">
+        <li>
+          <details>
+            <summary>Is Zebal free?</summary>
+            <div class="answer">
+              <p>Yes — every core feature (expenses, budgets, groups, wishlist goals) is free to use. AI features run on a credit system; you can earn more credits by watching an optional rewarded ad, or get unlimited AI use through an optional subscription. Nothing is ever required to use the app.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Is my data safe?</summary>
+            <div class="answer">
+              <p>Your expenses are stored encrypted on your own device by default. Online Backup is optional — if you turn it on, a copy is kept in Google Firebase so you can restore it on a new phone. Full detail is in the <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Does it work without an internet connection?</summary>
+            <div class="answer">
+              <p>Adding, viewing and editing expenses by typing works offline, since your data lives on your device. Voice entry, Receipt Scan, Ask AI and the AI summaries need an internet connection, since those go through Google's AI.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Which languages does voice entry understand?</summary>
+            <div class="answer">
+              <p>English, Hindi, and other languages — just speak naturally, Zebal works out the amount, item and category from what you say.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Do I need a group to use Zebal?</summary>
+            <div class="answer">
+              <p>No. Personal expense tracking, budgets and wishlist goals all work on their own. Groups are there for when you want to split bills with family, flatmates or friends, but nothing requires one.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Is Zebal accessible for screen reader users?</summary>
+            <div class="answer">
+              <p>Yes — it's built with TalkBack users in mind from the start, not as an afterthought. See our <a href="accessibility.html">Accessibility</a> page for exactly what that covers, and what we haven't gotten to yet.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Is there an iOS version?</summary>
+            <div class="answer">
+              <p>Not right now — Zebal is Android only at the moment.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Can I delete my data?</summary>
+            <div class="answer">
+              <p>Yes, at any time, from Settings — either erase everything on just this device, or delete your account entirely, including your online backup. See the <a href="privacy.html">Privacy Policy</a> for what each option does.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="guide/">User Guide</a>
+      &nbsp;&middot;&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
+      &nbsp;&middot;&nbsp;
+      <a href="terms.html">Terms and Conditions</a>
+      &nbsp;&middot;&nbsp;
+      <a href="credits.html">Credits</a>
+      &nbsp;&middot;&nbsp;
+      <a href="accessibility.html">Accessibility</a>
+    </p>
+    <p>Questions or feedback? Email <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a></p>
+  </footer>
+
+</div>
+
+<script src="/greeting.js?v=1" defer></script>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

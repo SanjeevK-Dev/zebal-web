@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>ಆಕ್ಸೆಸಿಬಿಲಿಟಿ — Zebal</title>
+<meta name="description" content="Zebal ಆಕ್ಸೆಸಿಬಿಲಿಟಿ ಫೀಚರ್‌ಗಳು, ನಾವು ಪಾಲಿಸುವ ಪ್ರಮಾಣ, ನಾವು ಹೇಗೆ ಟೆಸ್ಟ್ ಮಾಡುತ್ತೇವೆ, ಮತ್ತು ಸಮಸ್ಯೆಯನ್ನು ಹೇಗೆ ರಿಪೋರ್ಟ್ ಮಾಡಬೇಕು.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/accessibility.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/accessibility.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/accessibility.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/accessibility.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/accessibility.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/accessibility.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/accessibility.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/accessibility.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/accessibility.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+    --note-bg: #EAF3FB; --note-border: #9EC5E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+      --note-bg: #16232E; --note-border: #2C4A66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Kannada", sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  .intro { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 10px; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ"></select>
+  <noscript><a href="/accessibility.html">Read this page in English</a></noscript>
+</div>
+
+<h1>ಆಕ್ಸೆಸಿಬಿಲಿಟಿ</h1>
+<p class="intro">Zebal ಆಕ್ಸೆಸಿಬಿಲಿಟಿಗಾಗಿ ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು, ಪ್ರಾಮಾಣಿಕವಾಗಿ — ಇನ್ನೂ ಪೂರ್ಣಗೊಳಿಸದಿರುವುದನ್ನೂ ಸೇರಿಸಿ.</p>
+
+<main id="main">
+
+<h2>ನಮ್ಮ ಬದ್ಧತೆ</h2>
+<p>
+  Zebal ಅನ್ನು ಮೊದಲಿನಿಂದಲೂ ಸ್ಕ್ರೀನ್ ರೀಡರ್ ಬಳಕೆದಾರರು, ಕಡಿಮೆ ದೃಷ್ಟಿ
+  ಇರುವವರು, ಮತ್ತು ಟೈಪ್ ಮಾಡುವುದು ಕಷ್ಟ ಎನಿಸುವ ಯಾರನ್ನಾದರೂ ಗಮನದಲ್ಲಿಟ್ಟುಕೊಂಡು
+  ನಿರ್ಮಿಸಲಾಗಿದೆ — ನಂತರ ಸೇರಿಸಿದ್ದಲ್ಲ. ವಾಯ್ಸ್ ಇನ್‌ಪುಟ್ ಇರುವುದಕ್ಕೆ ಕಾರಣ,
+  ಪ್ರತಿ ಖರ್ಚನ್ನೂ ಟೈಪ್ ಮಾಡುವುದು ಬಹಳ ಜನರಿಗೆ ನಿಜವಾದ ಅಡ್ಡಿಯಾಗಿದೆ, ಕೇವಲ ಒಂದು
+  ಅನುಕೂಲಕರ ಫೀಚರ್ ಅಲ್ಲ.
+</p>
+
+<h2>ಏನೇನು ಬಿಲ್ಟ್-ಇನ್ ಆಗಿದೆ</h2>
+<ul>
+  <li><strong>ಸ್ಕ್ರೀನ್ ರೀಡರ್ ಸಪೋರ್ಟ್.</strong> ಪ್ರತಿ ಕಂಟ್ರೋಲ್‌ಗೂ ಲೇಬಲ್ ಇರುತ್ತದೆ, ಮತ್ತು ಫೀಚರ್‌ಗಳನ್ನು ನಿರ್ಮಿಸುತ್ತಿರುವಾಗಲೇ TalkBack ಅನ್ನು ನೇರವಾಗಿ ಆ್ಯಪ್‌ನಲ್ಲಿ ಟೆಸ್ಟ್ ಮಾಡಲಾಗುತ್ತದೆ, ನಂತರ ಮಾತ್ರ ಪರಿಶೀಲಿಸುವುದಲ್ಲ.</li>
+  <li><strong>ಬದಲಾಯಿಸಬಹುದಾದ ಟೆಕ್ಸ್ಟ್ ಸೈಜ್.</strong> ಆ್ಯಪ್‌ನಲ್ಲಿ ಫಿಕ್ಸ್ ಮಾಡಿದ ಸೈಜ್‌ಗೆ ಬದಲಾಗಿ, ಟೆಕ್ಸ್ಟ್ ನಿಮ್ಮ ಡಿವೈಸ್‌ನ ಸ್ವಂತ ಫಾಂಟ್ ಸೈಜ್ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಅನುಸರಿಸುತ್ತದೆ.</li>
+  <li><strong>ಡಾರ್ಕ್ ಮೋಡ್.</strong> ಪೂರ್ಣ ಡಾರ್ಕ್ ಥೀಮ್, ಕೇವಲ ಬಣ್ಣಗಳನ್ನು ತಲೆಕೆಳಗು ಮಾಡಿದ ಫಿಲ್ಟರ್ ಅಲ್ಲ.</li>
+  <li><strong>ಕನಿಷ್ಠ ಟಚ್ ಟಾರ್ಗೆಟ್ ಸೈಜ್.</strong> ಬಟನ್‌ಗಳು ಮತ್ತು ಟ್ಯಾಪ್ ಮಾಡಬಹುದಾದ ಕಂಟ್ರೋಲ್‌ಗಳು, ಸೀಮಿತ ಫೈನ್ ಮೋಟಾರ್ ಕಂಟ್ರೋಲ್ ಇರುವವರೂ ಸೇರಿದಂತೆ ಎಲ್ಲರೂ ಸುಲಭವಾಗಿ ಒತ್ತಬಹುದಾಗುವಂತೆ ಸೈಜ್ ಮಾಡಲಾಗಿದೆ.</li>
+  <li><strong>ಬಣ್ಣ ಮಾತ್ರ ಎಂದಿಗೂ ಇಲ್ಲ.</strong> ಸ್ಥಿತಿಯನ್ನು ಬಣ್ಣದಿಂದ ತೋರಿಸುವ ಎಲ್ಲ ಕಡೆ (ಉದಾ. ಸೆಟಲ್ ಆದ ಮತ್ತು ಪಾವತಿಸದ ಸ್ಪ್ಲಿಟ್), ಅದನ್ನು ಟೆಕ್ಸ್ಟ್‌ನಲ್ಲಿಯೂ ಹೇಳಲಾಗುತ್ತದೆ — ಬಣ್ಣ ಒಂದೇ ಎಂದಿಗೂ ಸಿಗ್ನಲ್ ಆಗಿರುವುದಿಲ್ಲ.</li>
+  <li><strong>ಒಂದಕ್ಕಿಂತ ಹೆಚ್ಚು ಭಾಷೆಗಳಲ್ಲಿ ವಾಯ್ಸ್.</strong> ಖರ್ಚನ್ನು ಮಾತನಾಡಿ ಹೇಳುವುದು ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ ಮತ್ತು ಇತರ ಭಾಷೆಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ, ಹಾಗಾಗಿ ನೀವು ಒಂದೇ ಸ್ಕ್ರಿಪ್ಟ್‌ನಲ್ಲಿ ಟೈಪ್ ಮಾಡುವುದಕ್ಕೆ ಮಾತ್ರ ಸೀಮಿತರಾಗಿರುವುದಿಲ್ಲ.</li>
+</ul>
+
+<h2>ನಾವು ಪಾಲಿಸುವ ಪ್ರಮಾಣ</h2>
+<p>
+  ನಾವು <strong>WCAG 2.1 Level AA</strong> ಅನ್ನು ನಮ್ಮ ಆಂತರಿಕ ಬೆಂಚ್‌ಮಾರ್ಕ್
+  ಆಗಿ ಇಟ್ಟುಕೊಂಡು ನಿರ್ಮಿಸುತ್ತೇವೆ — ಆ್ಯಪ್‌ನ ಸ್ವಂತ ಕೋಡ್‌ನಲ್ಲಿಯೂ, ಈ
+  ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿಯೂ (ಕಾಂಟ್ರಾಸ್ಟ್ ರೇಶಿಯೋಗಳು, ಫೋಕಸ್ ಇಂಡಿಕೇಶನ್, ಟಚ್
+  ಟಾರ್ಗೆಟ್ ಸೈಜಿಂಗ್) ಬಳಸುವ ಅದೇ ಪ್ರಮಾಣ ಇದು.
+</p>
+<div class="note">
+  <p>
+    ಸ್ಪಷ್ಟವಾಗಿ ಹೇಳುವುದಾದರೆ: ಇದು ನಾವು ನಮಗೆ ನಾವೇ ವಿಧಿಸಿಕೊಂಡ ಪ್ರಮಾಣ,
+    ಒಂದು ಸರ್ಟಿಫಿಕೇಶನ್ ಅಲ್ಲ. Zebal ಯಾವುದೇ ಅಧಿಕೃತ ಥರ್ಡ್-ಪಾರ್ಟಿ
+    ಆಕ್ಸೆಸಿಬಿಲಿಟಿ ಆಡಿಟ್ ಮೂಲಕ ಹಾದುಹೋಗಿಲ್ಲ. ಇಲ್ಲಿರುವುದು ಒಂದು ಚಿಕ್ಕ
+    ತಂಡ ಮಾಡುತ್ತಿರುವ ನಿಜವಾದ, ನಿರಂತರ ಪ್ರಯತ್ನವನ್ನು ಪ್ರತಿಬಿಂಬಿಸುತ್ತದೆ —
+    ಕಂಪ್ಲಯನ್ಸ್‌ಗೆ ಗ್ಯಾರಂಟಿ ಅಲ್ಲ.
+  </p>
+</div>
+
+<h2>ನಾವು ಹೇಗೆ ಟೆಸ್ಟ್ ಮಾಡುತ್ತೇವೆ</h2>
+<p>
+  ಮುಖ್ಯವಾಗಿ ಪ್ರತಿ ಫೀಚರ್ ಅನ್ನು ನಿರ್ಮಿಸುತ್ತಿರುವಾಗಲೇ ನಿಜವಾದ Android
+  ಡಿವೈಸ್‌ಗಳಲ್ಲಿ TalkBack ಬಳಸುವ ಮೂಲಕ, ಕೊನೆಯಲ್ಲಿ ಮಾತ್ರ ಟೆಸ್ಟ್
+  ಮಾಡುವುದಲ್ಲ. ಸಂಬಂಧಿತ ಕಡೆಗಳಲ್ಲಿ ಕೀಬೋರ್ಡ್ ಮತ್ತು ಸ್ವಿಚ್-ಸ್ಟೈಲ್
+  ನ್ಯಾವಿಗೇಶನ್ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ. ಈ ಟೂಲ್‌ಗಳನ್ನು ಪ್ರತಿದಿನ ಬಳಸುವವರು
+  ಏನಾದರೂ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ ಎಂದು ನಮಗೆ ಹೇಳುವುದನ್ನೂ ನಾವು
+  ಅವಲಂಬಿಸಿದ್ದೇವೆ — ಕೆಳಗೆ "ಸಮಸ್ಯೆಯನ್ನು ರಿಪೋರ್ಟ್ ಮಾಡಿ" ನೋಡಿ.
+</p>
+
+<h2>ಈ ವೆಬ್‌ಸೈಟ್</h2>
+<p>
+  ಇಲ್ಲಿಯೂ ಅದೇ ತತ್ವಗಳು ಅನ್ವಯಿಸುತ್ತವೆ: ಪ್ರತಿ ಟೆಕ್ಸ್ಟ್/ಬ್ಯಾಕ್‌ಗ್ರೌಂಡ್
+  ಬಣ್ಣದ ಜೋಡಿ 4.5:1 ಕನಿಷ್ಠ ಕಾಂಟ್ರಾಸ್ಟ್ ಅನ್ನು ತಲುಪುತ್ತದೆ, ಕೀಬೋರ್ಡ್‌ನಿಂದ
+  ನ್ಯಾವಿಗೇಟ್ ಮಾಡುವಾಗ ಫೋಕಸ್ ಯಾವಾಗಲೂ ಕಾಣುತ್ತದೆ, ಒಂದು ಸ್ಕಿಪ್ ಲಿಂಕ್
+  ನಿಮ್ಮನ್ನು ಹೆಡರ್ ಅನ್ನು ದಾಟಿ ನೇರವಾಗಿ ಹೋಗಲು ಬಿಡುತ್ತದೆ, ಮತ್ತು ಟೆಕ್ಸ್ಟ್
+  ಸೈಜ್‌ಗಳು rem ಯುನಿಟ್‌ಗಳನ್ನು ಬಳಸುತ್ತವೆ, ಹಾಗಾಗಿ ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನ
+  ಸ್ವಂತ ಟೆಕ್ಸ್ಟ್-ಸೈಜ್ ಸೆಟ್ಟಿಂಗ್ ಕೆಲಸ ಮಾಡುತ್ತಲೇ ಇರುತ್ತದೆ.
+</p>
+
+<h2>ತಿಳಿದಿರುವ ಮಿತಿಗಳು</h2>
+<ul>
+  <li>Zebal ಪ್ರಸ್ತುತ Android ಮಾತ್ರ — ಇದಕ್ಕೆ iOS ಆವೃತ್ತಿ ಇಲ್ಲ, ಹಾಗಾಗಿ ಇಲ್ಲಿ ಯಾವುದೂ VoiceOver ವಿರುದ್ಧ ಟೆಸ್ಟ್ ಮಾಡಲಾಗಿಲ್ಲ.</li>
+  <li>Receipt Scan ಸ್ಕ್ಯಾನ್ ಮಾಡಿದ ಫೋಟೋಗೆ ತನ್ನದೇ ವಿವರಣೆಯನ್ನು ಸೇರಿಸುವುದಿಲ್ಲ — ರಸೀದಿ ಇಮೇಜ್ ಅನ್ನು ಗಟ್ಟಿಯಾಗಿ ಓದುವುದು, ನಾವು ಕಸ್ಟಮ್ ಆಗಿ ನಿರ್ಮಿಸಿದ ಯಾವುದರ ಮೇಲೂ ಅಲ್ಲ, ನಿಮ್ಮ ಡಿವೈಸ್‌ನ ಸ್ವಂತ ಬಿಲ್ಟ್-ಇನ್ "describe image" ಫೀಚರ್‌ನ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿದೆ.</li>
+  <li>ಮೇಲೆ ಹೇಳಿದಂತೆ, ಇನ್ನೂ ಸ್ವತಂತ್ರ ಆಕ್ಸೆಸಿಬಿಲಿಟಿ ಆಡಿಟ್ ಇಲ್ಲ. ನೀವು ಅಸಿಸ್ಟಿವ್ ಟೆಕ್ನಾಲಜಿಯನ್ನು ಅವಲಂಬಿಸಿದ್ದು, ಏನಾದರೂ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ, ಅದು ನಮಗೆ ನಿಜವಾಗಿಯೂ ತಿಳಿಯಬೇಕು ಎಂದಿದೆ — "ಎಲ್ಲವೂ ಸರಿಯಾಗಿದೆ" ಎಂದು ಹೇಳುವ ಬ್ಯಾಡ್ಜ್‌ಗಿಂತ ಅದು ನಮಗೆ ಹೆಚ್ಚು ಉಪಯುಕ್ತ.</li>
+</ul>
+
+<h2>ಸಮಸ್ಯೆಯನ್ನು ರಿಪೋರ್ಟ್ ಮಾಡಿ</h2>
+<p>
+  ಆ್ಯಪ್‌ನಲ್ಲಿ ಅಥವಾ ಈ ಸೈಟ್‌ನಲ್ಲಿ ಏನಾದರೂ ನಿಮ್ಮ ಸ್ಕ್ರೀನ್ ರೀಡರ್, ಸ್ವಿಚ್
+  ಆಕ್ಸೆಸ್, ಅಥವಾ ಬೇರೆ ಯಾವುದೇ ಅಸಿಸ್ಟಿವ್ ಟೆಕ್ನಾಲಜಿಯೊಂದಿಗೆ ಕೆಲಸ
+  ಮಾಡದಿದ್ದರೆ, ದಯವಿಟ್ಟು ನಮಗೆ ತಿಳಿಸಿ —
+  <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>
+  ಗೆ ಇಮೇಲ್ ಕಳುಹಿಸಿ. ನಿಮ್ಮ ಡಿವೈಸ್ ಅನ್ನು, ನೀವು ಏನನ್ನು
+  ಬಳಸುತ್ತಿದ್ದೀರಿ ಎಂಬುದನ್ನು (ಉದಾ. Android ನಲ್ಲಿ TalkBack) ಸಹ
+  ಉಲ್ಲೇಖಿಸುವುದರಿಂದ ನಮಗೆ ಅದನ್ನು ರಿಪ್ರೊಡ್ಯೂಸ್ ಮಾಡಲು ಸಹಾಯವಾಗುತ್ತದೆ.
+  ಇವುಗಳನ್ನು ನಾವು ಪ್ರಾಶಸ್ತ್ಯದ ರಿಪೋರ್ಟ್‌ಗಳಾಗಿ ಪರಿಗಣಿಸುತ್ತೇವೆ, ಸಾಮಾನ್ಯ
+  ಫೀಡ್‌ಬ್ಯಾಕ್ ಆಗಿ ಅಲ್ಲ.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Zebal ಗೆ ಹಿಂತಿರುಗಿ</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

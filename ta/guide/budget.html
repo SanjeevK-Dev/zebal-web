@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>பட்ஜெட் — Zebal வழிகாட்டி</title>
+<meta name="description" content="Zebal-இல் செலவு வரம்பை அமைத்தல், சுழற்சியைத் தேர்ந்தெடுத்தல், மற்றும் பணத்தை அடுத்த சுழற்சிக்கு எடுத்துச் செல்லுதல்.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/guide/budget.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/guide/budget.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/guide/budget.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/guide/budget.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/guide/budget.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/guide/budget.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/guide/budget.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/guide/budget.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/guide/budget.html">
+<link rel="stylesheet" href="/guide/guide.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Tamil", sans-serif; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">முதன்மை உள்ளடக்கத்திற்குச் செல்</a>
+
+<div class="container">
+
+<nav class="crumbs"><a href="index.html">பயனர் வழிகாட்டி</a> / பட்ஜெட்</nav>
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="மொழியைத் தேர்ந்தெடுக்கவும்"></select>
+  <noscript><a href="/guide/budget.html">Read this page in English</a></noscript>
+</div>
+
+<h1>பட்ஜெட்</h1>
+<p class="lead">வரம்பை அமைத்தல், மற்றும் எண்கள் என்ன அர்த்தம் என்பதைப் புரிந்துகொள்ளுதல்.</p>
+
+<main id="main">
+
+<h2>பட்ஜெட்டை அமைத்தல்</h2>
+
+<ol class="steps">
+  <li><span class="ui">Budget</span> தாவலைத் திறக்கவும்.</li>
+  <li>கீழிறங்கு பட்டியலிலிருந்து ஒரு சுழற்சியைத் தேர்ந்தெடுக்கவும்.</li>
+  <li>உங்கள் வரம்பை உள்ளிடவும்.</li>
+  <li><span class="ui">Save Budget Limit</span> என்பதைத் தட்டவும்.</li>
+</ol>
+
+<h3>சுழற்சிகள்</h3>
+<table>
+  <thead>
+    <tr><th>சுழற்சி</th><th>இயங்கும் காலம்</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="ui">Monthly Budget</span></td><td>மாதத்தின் 1ஆம் தேதி முதல் கடைசி நாள் வரை</td></tr>
+    <tr><td><span class="ui">Weekly Budget</span></td><td>ஞாயிறு முதல் சனிக்கிழமை வரை</td></tr>
+    <tr><td><span class="ui">15 Days (Fortnightly)</span></td><td>1–15, பின்னர் 16 முதல் மாத இறுதி வரை</td></tr>
+    <tr><td><span class="ui">Yearly Budget</span></td><td>ஜனவரி 1 முதல் டிசம்பர் 31 வரை</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <p>
+    <strong>சுழற்சிகள் நாட்காட்டியைப் பின்பற்றுகின்றன.</strong> நீங்கள் 15ஆம்
+    தேதி ஒரு மாத பட்ஜெட்டை அமைத்தாலும், அது அந்த மாதத்தின் கடைசி நாளிலேயே
+    முடிவடையும் — அடுத்த மாதத்தின் 15ஆம் தேதியில் அல்ல. இதனால் Budget தாவலும்
+    ஆப்பின் மற்ற பகுதிகளும் ஒரே மாதங்களைக் கணக்கிடும்.
+  </p>
+</div>
+
+<h2>திரையைப் படித்தல்</h2>
+
+<table>
+  <thead>
+    <tr><th>இது என்ன காட்டுகிறது</th><th>பொருள்</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="ui">Spent / Remaining</span></td>
+      <td>இந்த சுழற்சியில் எவ்வளவு செலவழிக்கப்பட்டது, மற்றும் எவ்வளவு மீதம் உள்ளது.</td>
+    </tr>
+    <tr>
+      <td><span class="ui">Safe to Spend Today</span></td>
+      <td>மீதமுள்ள உங்கள் பணத்தை மீதமுள்ள நாட்களால் வகுத்தது. இதற்குக் கீழே இருந்தால், நீங்கள் சுழற்சியை பட்ஜெட்டுக்குள் முடிப்பீர்கள்.</td>
+    </tr>
+    <tr>
+      <td>முன்னேற்றப் பட்டை</td>
+      <td>நீங்கள் உங்கள் வரம்பில் எவ்வளவு தூரம் சென்றிருக்கிறீர்கள் என்பது.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  நீங்கள் உங்கள் வரம்பில் 75% மற்றும் 90% ஐக் கடக்கும்போதும் Zebal
+  உங்களை எச்சரிக்கிறது, இதனால் அதிக செலவு இறுதியில் திடீரென தோன்றாது.
+</p>
+
+<h2>சுழற்சிகளுக்கு இடையே பணத்தை எடுத்துச் செல்லுதல்</h2>
+
+<p>ஒரு சுழற்சி முடியும்போது என்ன நடக்கும் என்பதை இரண்டு அமைப்புகள் தீர்மானிக்கின்றன:</p>
+
+<h3>செலவிடாத தொகையை அடுத்த சுழற்சிக்கு எடுத்துச் செல்</h3>
+<p>
+  மாதத்தை பட்ஜெட்டுக்குள் முடித்தால், மீதி தொகை அடுத்த மாதத்தின் வரம்புடன்
+  சேர்க்கப்படும். ₹10,000 பட்ஜெட்டில் ₹8,000 செலவழித்தால், அடுத்த மாதம்
+  உங்களிடம் ₹12,000 இருக்கும்.
+</p>
+
+<h3>அதிகமாக செலவழித்த பற்றாக்குறையை அடுத்த சுழற்சியிலிருந்து கழி</h3>
+<p>
+  வரம்பை மீறினால், அதிகப்படியான தொகை அடுத்த மாதத்திலிருந்து கழிக்கப்படும்.
+  ₹10,000 பட்ஜெட்டில் ₹11,000 செலவழித்தால், அடுத்த மாதம் உங்களிடம் ₹9,000
+  இருக்கும்.
+</p>
+
+<div class="note">
+  <p>
+    <strong>இவை இரண்டும் ஒருபோதும் முரண்படாது.</strong> ஒவ்வொரு சுழற்சியும்
+    பட்ஜெட்டுக்குள் அல்லது அதற்கு மேல் முடிவடையும், எனவே ஒரு நேரத்தில்
+    இவற்றில் ஒன்று மட்டுமே பொருந்தும். இரண்டையும் இயக்குவது என்பது இரண்டு
+    சூழ்நிலைகளிலும் என்ன நடக்க வேண்டும் என்பதை நீங்கள் முடிவு செய்திருக்கிறீர்கள்
+    என்று பொருள்.
+  </p>
+</div>
+
+<h2>உங்கள் சுழற்சி முடிவதற்கு முன்</h2>
+<p>
+  ஒரு சுழற்சி முடிவதற்கு முந்தைய நாள், அடுத்த சுழற்சிக்கான பட்ஜெட்டை அமைக்க
+  Zebal ஒரு நினைவூட்டலை அனுப்புகிறது. ஆப் மூடப்பட்டிருந்தாலும் இது வரும்.
+</p>
+
+<h2>நீங்கள் புதிய பட்ஜெட்டை அமைக்கவில்லை என்றால்</h2>
+<p>
+  ஒவ்வொரு சுழற்சியும் புதிதாகத் தொடங்குகிறது. புதிய காலகட்டத்திற்கு வரம்பை
+  அமைக்கவில்லை என்றால், Budget தாவல் பழைய எண்ணை மௌனமாக மீண்டும்
+  பயன்படுத்துவதற்குப் பதிலாக <span class="ui">No active budget limit set</span>
+  எனக் காட்டும் — மாதங்களுக்கு முன்பு நீங்கள் அமைத்த வரம்பு இப்போது நீங்கள்
+  விரும்புவதாக இல்லாமல் இருக்கலாம்.
+</p>
+<p>
+  உங்கள் முந்தைய பட்ஜெட்கள் பாதுகாக்கப்படுகின்றன, மேலும் அவை உங்கள்
+  ஏற்றுமதி செய்யப்பட்ட தரவில் தோன்றும், இதனால் ஏதேனும் முந்தைய மாதத்தில்
+  உங்கள் வரம்பு என்னவாக இருந்தது என்பதை நீங்கள் பார்க்கலாம்.
+</p>
+
+<h2>AI ஆலோசனை மற்றும் வாராந்திர செக்-இன்</h2>
+
+<p>பட்ஜெட் செயலில் இருந்தவுடன் இரண்டு பொத்தான்கள் தோன்றும்:</p>
+
+<ul>
+  <li>
+    <span class="ui">Get Smart AI Advice</span> — இந்த சுழற்சியில் உங்கள்
+    பணம் உண்மையில் எங்கு செல்கிறது என்பதை அடிப்படையாகக் கொண்ட ஒரு குறுகிய,
+    குறிப்பிட்ட பரிந்துரை.
+  </li>
+  <li>
+    <span class="ui">View Weekly Check-in</span> — வாரம் எப்படிச் சென்றது,
+    என்ன குறிப்பிடத்தக்கதாக இருந்தது, மற்றும் அடுத்த வாரம் முயற்சிக்க
+    வேண்டிய ஒரு விஷயம் பற்றிய மதிப்பாய்வு. இது வாரத்திற்கு ஒருமுறை
+    அறிவிப்பாகவும் வரும்.
+  </li>
+</ul>
+
+<div class="warn">
+  <p>
+    AI பரிந்துரைகள் சிந்திக்கத் தூண்டும் குறிப்புகளே, நிதி ஆலோசனை அல்ல.
+    ஆப் நீங்கள் உள்ளிட்டதை மட்டுமே பார்க்க முடியும், மேலும் அதை தவறாகவும்
+    புரிந்துகொள்ளக்கூடும். உங்கள் பணம் தொடர்பான எந்த முடிவும் உங்களுடையதாகவே
+    இருக்கும்.
+  </p>
+</div>
+
+<h2>குழு பட்ஜெட்கள்</h2>
+<p>
+  குழுக்களுக்கு அவற்றின் சொந்த தனி பட்ஜெட் உள்ளது, இது ஒரு நிர்வாகியால்
+  அமைக்கப்படுகிறது. இது அதே வழியில் செயல்படுகிறது — வரம்பு, சுழற்சி,
+  எடுத்துச் செல்லுதல் — ஆனால் இது குழுவின் பகிரப்பட்ட செலவுக்குப்
+  பொருந்தும். பார்க்கவும் <a href="groups.html">குழுக்கள்</a>.
+</p>
+
+<div class="next-prev">
+  <a href="expenses.html">&larr; செலவுகளைச் சேர்த்தல்</a>
+  <a href="groups.html">குழுக்கள் &rarr;</a>
+</div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="/ta/">முகப்பு</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/ta/privacy.html">தனியுரிமை</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/ta/terms.html">விதிமுறைகள்</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/ta/accessibility.html">அணுகல்தன்மை</a>
+  </p>
+</footer>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

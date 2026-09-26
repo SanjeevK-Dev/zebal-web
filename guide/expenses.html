@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>Adding Expenses — Zebal Guide</title>
+<meta name="description" content="How to add an expense in Zebal by typing, speaking or scanning a receipt, split a bill, and set up recurring bills.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/guide/expenses.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/guide/expenses.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/guide/expenses.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/guide/expenses.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/guide/expenses.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/guide/expenses.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/guide/expenses.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/guide/expenses.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/guide/expenses.html">
+<link rel="stylesheet" href="guide.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="container">
+
+<nav class="crumbs"><a href="index.html">User Guide</a> / Adding Expenses</nav>
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="Choose a language"></select>
+  <noscript><a href="/hi/guide/expenses.html">हिंदी में पढ़ें</a></noscript>
+</div>
+
+<h1>Adding Expenses</h1>
+<p class="lead">Typing, speaking or scanning a receipt, splitting a bill, and setting up bills that repeat.</p>
+
+<main id="main">
+
+<h2>Typing an expense</h2>
+
+<figure class="shot">
+  <img src="img/expense-form.png" alt="The expense form filled in with an item name, amount and selected category.">
+  <figcaption>The expense form</figcaption>
+</figure>
+
+<ol class="steps">
+  <li>Open the <span class="ui">Expense</span> tab.</li>
+  <li><span class="ui">Item Name</span> — what you bought, for example "Milk" or "Room Rent".</li>
+  <li><span class="ui">Amount</span> — just the number.</li>
+  <li><span class="ui">Category</span> and <span class="ui">Subcategory</span> — pick from the lists.</li>
+  <li><span class="ui">Save Expense</span>.</li>
+</ol>
+
+<div class="note">
+  <p>
+    As you type the item name, Zebal tries to pick the category for you. If
+    it gets it wrong, just change it — the choice is always yours.
+  </p>
+</div>
+
+<h3>Adding several things in a row</h3>
+<p>
+  Use <span class="ui">Save &amp; Add More</span> instead. It saves what you've
+  entered and clears the form so you can go straight into the next one, without
+  leaving the screen.
+</p>
+
+<h3>If no category fits</h3>
+<p>
+  Choose <span class="ui">Other / Miscellaneous</span>. A box appears where you
+  can type your own description, so nothing is lost just because the list
+  doesn't have the right name.
+</p>
+
+<h2>Speaking an expense</h2>
+
+<figure class="shot">
+  <img src="img/voice-entry.png" alt="A dialog headed AI Confirmation, showing the item, category and amount Zebal understood, with Save, Edit and Save Shortcut buttons.">
+  <figcaption>After you speak, Zebal shows what it understood so you can check it</figcaption>
+</figure>
+
+<p>
+  Tap the <span class="ui">microphone</span> button and say what you spent.
+  Normal sentences work:
+</p>
+<ul>
+  <li>"Spent five hundred rupees on groceries"</li>
+  <li>"Paid three thousand for room rent"</li>
+  <li>"Two hundred on petrol"</li>
+</ul>
+<p>
+  Zebal fills in the item, amount and category, then shows you what it
+  understood so you can check it before saving.
+</p>
+
+<div class="warn">
+  <p>
+    <strong>Always check what it filled in.</strong> Speech recognition can
+    mishear an amount, especially in a noisy place. A quick glance before saving
+    avoids a wrong figure sitting in your records.
+  </p>
+</div>
+
+<h2 id="receipt">Scanning a receipt</h2>
+
+<figure class="shot">
+  <img src="img/receipt-scan.png" alt="The receipt scanner reviewing a photographed receipt, showing the items it read broken out one by one.">
+  <figcaption>Zebal reads the receipt and breaks it into item-wise expenses</figcaption>
+</figure>
+
+<p>
+  Instead of typing or speaking each item, point your camera at a paper
+  receipt and let Zebal read it for you.
+</p>
+
+<ol class="steps">
+  <li>Open the <span class="ui">Expense</span> tab and tap the receipt/camera icon.</li>
+  <li>Photograph the receipt. If it's long, you can take more than one photo — Zebal stitches them together.</li>
+  <li>Wait a moment while it reads the receipt.</li>
+  <li>Go through the items it found — each one is broken out separately, so you can fix a wrong price or category before anything is saved.</li>
+  <li>Save.</li>
+</ol>
+
+<div class="note">
+  <p>
+    Receipt Scan works for a personal expense and for a group expense alike —
+    the same scan-and-review flow appears when you're adding an expense inside
+    a group.
+  </p>
+</div>
+
+<div class="warn">
+  <p>
+    <strong>Check the items before saving, the same as with voice.</strong>
+    A crumpled receipt or a faint print can occasionally trip up what gets
+    read — a quick glance catches it before a wrong figure sits in your
+    records.
+  </p>
+</div>
+
+<h2>Who paid</h2>
+<p>
+  By default an expense is recorded as paid by you. If someone else paid,
+  choose <span class="ui">Other</span> and type their name.
+</p>
+
+<h2>Splitting a bill</h2>
+
+<figure class="shot">
+  <img src="img/split-bill.png" alt="The split options dialog listing Split Evenly, Split by Amount, Split by Share and Split by Percentage.">
+  <figcaption>Choosing how to split</figcaption>
+</figure>
+
+<p>
+  Tick <span class="ui">Split with loved ones</span> and add the names of the
+  people sharing it. There are four ways to split:
+</p>
+
+<table>
+  <thead>
+    <tr><th>Method</th><th>Use it when</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="ui">Split Evenly</span></td>
+      <td>Everyone pays the same. The most common choice.</td>
+    </tr>
+    <tr>
+      <td><span class="ui">Split by Amount</span></td>
+      <td>You know exactly what each person owes — for example everyone ordered separately.</td>
+    </tr>
+    <tr>
+      <td><span class="ui">Split by Share</span></td>
+      <td>Some people should pay proportionally more — for example one person had two portions.</td>
+    </tr>
+    <tr>
+      <td><span class="ui">Split by Percentage</span></td>
+      <td>You want to divide it by percentage rather than by amount.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <p>
+    This split is for your own records. If you want the app to track who owes
+    whom over time and work out settlements, use a
+    <a href="groups.html">Group</a> instead.
+  </p>
+</div>
+
+<h2>Presets</h2>
+<p>
+  If you buy the same set of things regularly — a weekly grocery run, say — you
+  can save it as a preset and load it back with one tap instead of typing it out
+  again.
+</p>
+<p>
+  Use <span class="ui">Add to Preset</span> to save the current entry, and
+  <span class="ui">My Presets</span> to load one.
+</p>
+
+<h2>Recurring bills</h2>
+
+<p>
+  For anything that charges you on a schedule — rent, a subscription, an EMI —
+  set it up once and Zebal records it automatically.
+</p>
+
+<ol class="steps">
+  <li>On the <span class="ui">Expense</span> tab, tap <span class="ui">Manage Recurring</span>.</li>
+  <li>Tap the button to add a new automation.</li>
+  <li>Enter the name, amount and category.</li>
+  <li>Choose how often: <span class="ui">Daily</span>, <span class="ui">Weekly</span>, <span class="ui">Monthly</span> or <span class="ui">Yearly</span>.</li>
+  <li>Pick the date it starts.</li>
+  <li>Save.</li>
+</ol>
+
+<p>
+  From then on the expense is added for you each cycle. On the list of
+  automations, tapping one pauses or resumes it, and holding it down deletes it.
+</p>
+
+<div class="note">
+  <p>
+    If your phone was off or the app unopened for a while, Zebal catches up
+    the next time it runs — each missed cycle is recorded against the date it
+    was actually due, not today, so your monthly totals stay accurate.
+  </p>
+</div>
+
+<h2>Editing or deleting an expense</h2>
+<p>
+  On the <span class="ui">Home</span> tab, tap any expense to see its full
+  details, then use <span class="ui">Quick Edit</span> to change the name or
+  amount. The bin icon on the right deletes it, after asking you to confirm.
+</p>
+
+<div class="next-prev">
+  <a href="getting-started.html">&larr; Getting Started</a>
+  <a href="budget.html">Budgets &rarr;</a>
+</div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="/">Home</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/privacy.html">Privacy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/terms.html">Terms</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/accessibility.html">Accessibility</a>
+  </p>
+</footer>
+
+</div>
+
+<script src="guide.js" async></script>
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

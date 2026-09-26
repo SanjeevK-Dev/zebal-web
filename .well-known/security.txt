@@ -1,0 +1,8 @@
+Contact: mailto:quickconnect82@gmail.com
+Expires: 2027-08-20T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://zebal.in/.well-known/security.txt
+
+# If you've found a security issue in Zebal (the Android app) or this
+# website, please email the contact above with details so it can be fixed
+# before it's disclosed publicly. Thank you for helping keep Zebal safe.

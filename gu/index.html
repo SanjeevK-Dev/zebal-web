@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>Zebal — કોઈ પણ ભાષામાં બોલીને ખર્ચ ટ્રેક કરો</title>
+<meta name="description" content="Zebal એ બધા માટે બનાવેલું એક ખર્ચ ટ્રેકર છે. બોલીને ખર્ચ ઉમેરો, ગ્રુપ સાથે બિલ સ્પ્લિટ કરો, અને AI ઇનસાઇટ્સ મેળવો. સ્ક્રીન રીડર સાથે સંપૂર્ણપણે એક્સેસિબલ.">
+
+<meta property="og:title" content="Zebal — બોલીને ખર્ચ ટ્રેક કરો">
+<meta property="og:description" content="બોલીને ખર્ચ ઉમેરો, ગ્રુપ સાથે બિલ સ્પ્લિટ કરો, AI ઇનસાઇટ્સ મેળવો. સંપૂર્ણપણે એક્સેસિબલ.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://zebal.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://zebal.in/gu/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zebal.in/og-image.png">
+
+<link rel="alternate" hreflang="en" href="https://zebal.in/">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA;
+    --surface: #FFFFFF;
+    --text: #1D1C1D;
+    --text-muted: #616061;
+    --primary: #0A66C2;
+    --primary-dark: #084E96;
+    --border: #E1E4E8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --surface: #1E1E1E;
+      --text: #E3E3E3;
+      --text-muted: #A0A0A0;
+      --primary: #669DF6;
+      --primary-dark: #8AB4F8;
+      --border: #333333;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Gujarati", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 16px 0 0; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+
+  header { text-align: center; padding: 32px 0 32px; }
+  .logo-mark { display: block; margin: 0 auto 16px; }
+
+  h1 { font-size: 2.2rem; margin: 0 0 12px; line-height: 1.25; }
+  .tagline { font-size: 1.15rem; color: var(--text-muted); margin: 0 0 32px; }
+
+  .greeting {
+    display: none;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    min-height: 48px;
+  }
+  .cta:hover { background: var(--primary-dark); }
+  .cta:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+
+  section { margin: 48px 0; }
+  h2 { font-size: 1.5rem; margin: 0 0 20px; }
+
+  .features { list-style: none; padding: 0; margin: 0; }
+  .features li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .features strong { display: block; margin-bottom: 6px; font-size: 1.05rem; }
+  .features span { color: var(--text-muted); }
+
+  .faq { list-style: none; padding: 0; margin: 0; }
+  .faq li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    float: right;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq summary:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+  .faq .answer { padding: 0 20px 18px; color: var(--text-muted); }
+  .faq .answer a { color: var(--primary); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  footer a { color: var(--primary); }
+  footer a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">મુખ્ય કન્ટેન્ટ પર જાઓ</a>
+
+<div class="container">
+
+  <div class="lang-switch">
+    <label for="langSelect">🌐</label>
+    <select id="langSelect" aria-label="ભાષા પસંદ કરો"></select>
+    <noscript><a href="/">Read this page in English</a></noscript>
+  </div>
+
+  <header>
+    <svg class="logo-mark" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+      <title id="logoTitle">Zebal logo</title>
+      <rect width="64" height="64" rx="16" fill="var(--primary)"/>
+      <text x="26" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+      <rect x="45" y="30" width="3.5" height="10" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="51" y="24" width="3.5" height="22" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <rect x="57" y="34" width="3.5" height="6" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+    </svg>
+
+    <p class="greeting" id="greeting"></p>
+
+    <h1>Zebal</h1>
+    <p class="tagline">બોલીને તમારો ખર્ચ ટ્રેક કરો — કોઈ પણ ભાષામાં.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sanjeev.spendify">
+      Google Play પર મેળવો
+    </a>
+    <p style="margin-top:20px;">
+      <a href="/gu/guide/">યુઝર ગાઇડ વાંચો</a>
+    </p>
+  </header>
+
+  <main id="main">
+
+    <section>
+      <h2>Zebal શું કરે છે</h2>
+      <ul class="features">
+        <li>
+          <strong>બોલીને તમારો ખર્ચ કહો</strong>
+          <span>તમે કેટલો ખર્ચ કર્યો એ બોલો, અને Zebal જાતે જ રકમ અને કેટેગરી શોધી કાઢશે. તે English, Hindi અને બીજી ભાષાઓ સમજે છે.</span>
+        </li>
+        <li>
+          <strong>રસીદ સ્કેન કરો</strong>
+          <span>તમારો કેમેરો રસીદ તરફ રાખો, Zebal એ વાંચીને જાતે જ આઇટમ પ્રમાણે ખર્ચ અલગ કરી દેશે — તમારે એક પછી એક ટાઇપ કરવાની જરૂર નથી. આ તમારા પોતાના ખર્ચ અને ગ્રુપ ખર્ચ, બંને માટે કામ કરે છે.</span>
+        </li>
+        <li>
+          <strong>ગ્રુપ સાથે બિલ સ્પ્લિટ કરો</strong>
+          <span>કુટુંબ, ફ્લેટમેટ્સ કે મિત્રો સાથે ખર્ચ શેર કરો. કોણે કેટલા આપવાના છે એ Zebal ગણી કાઢે છે, અને UPI દ્વારા સેટલ કરી આપે છે.</span>
+        </li>
+        <li>
+          <strong>સમજદાર બજેટ</strong>
+          <span>માસિક લિમિટ સેટ કરો, ન વપરાયેલા પૈસા આગળ કેરી ફોરવર્ડ કરો, અને તમારી સાયકલ પૂરી થાય એ પહેલાં ચેતવણી મેળવો.</span>
+        </li>
+        <li>
+          <strong>સાદી ભાષામાં સવાલ પૂછો</strong>
+          <span>"મેં સૌથી વધુ ક્યાં ખર્ચ કર્યો?" — ટાઇપ કરીને કે બોલીને પૂછો, અને જવાબ વાંચીને તમને સંભળાવવામાં આવશે.</span>
+        </li>
+        <li>
+          <strong>એક્સેસિબિલિટી માટે બનાવેલું</strong>
+          <span>સંપૂર્ણ સ્ક્રીન રીડર સપોર્ટ, ટેક્સ્ટ સાઇઝ બદલવાની સુવિધા, અને ડાર્ક મોડ. દરેક કંટ્રોલ યોગ્ય રીતે લેબલ થયેલું અને યોગ્ય કદનું છે.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>વારંવાર પુછાતા સવાલો</h2>
+      <ul class="faq">
+        <li>
+          <details>
+            <summary>શું Zebal ફ્રી છે?</summary>
+            <div class="answer">
+              <p>હા — દરેક મુખ્ય ફીચર (ખર્ચ, બજેટ, ગ્રુપ, વિશલિસ્ટ ગોલ) વાપરવું ફ્રી છે. AI ફીચર્સ ક્રેડિટ સિસ્ટમ પર ચાલે છે; તમે ઓપ્શનલ rewarded ad જોઈને વધુ ક્રેડિટ મેળવી શકો છો, અથવા ઓપ્શનલ સબસ્ક્રિપ્શન દ્વારા અનલિમિટેડ AI વાપરી શકો છો. એપ વાપરવા માટે કંઈ પણ ફરજિયાત નથી.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>શું મારો ડેટા સુરક્ષિત છે?</summary>
+            <div class="answer">
+              <p>તમારા ખર્ચ ડિફોલ્ટ રીતે તમારા પોતાના ડિવાઇસ પર જ એન્ક્રિપ્ટેડ સ્વરૂપે સ્ટોર થાય છે. Online Backup ઓપ્શનલ છે — તમે એ ચાલુ કરો તો, નવા ફોનમાં રિસ્ટોર કરવા માટે એક કોપી Google Firebase માં રાખવામાં આવે છે. પૂરી વિગત <a href="/gu/privacy.html">પ્રાઇવસી પોલિસી</a> માં છે.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>શું ઇન્ટરનેટ કનેક્શન વગર આ કામ કરે છે?</summary>
+            <div class="answer">
+              <p>ટાઇપ કરીને ખર્ચ ઉમેરવો, જોવો અને એડિટ કરવો ઓફલાઇન પણ કામ કરે છે, કારણ કે તમારો ડેટા તમારા ડિવાઇસ પર જ રહે છે. વોઇસ એન્ટ્રી, રસીદ સ્કેન, Ask AI અને AI સમરી માટે ઇન્ટરનેટ કનેક્શન જોઈએ, કારણ કે એ Google ના AI મારફતે ચાલે છે.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>વોઇસ એન્ટ્રી કઈ કઈ ભાષાઓ સમજે છે?</summary>
+            <div class="answer">
+              <p>English, Hindi, અને બીજી ભાષાઓ — બસ સ્વાભાવિક રીતે બોલો, તમે જે કહો છો એના પરથી Zebal રકમ, આઇટમ અને કેટેગરી શોધી કાઢે છે.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>શું Zebal વાપરવા માટે ગ્રુપ જરૂરી છે?</summary>
+            <div class="answer">
+              <p>ના. પર્સનલ ખર્ચ ટ્રેકિંગ, બજેટ અને વિશલિસ્ટ ગોલ — બધું જ પોતાની રીતે કામ કરે છે. કુટુંબ, ફ્લેટમેટ્સ કે મિત્રો સાથે બિલ સ્પ્લિટ કરવું હોય ત્યારે ગ્રુપ કામમાં આવે છે, પણ એ ફરજિયાત નથી.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>શું Zebal સ્ક્રીન રીડર યુઝર્સ માટે એક્સેસિબલ છે?</summary>
+            <div class="answer">
+              <p>હા — શરૂઆતથી જ TalkBack યુઝર્સને ધ્યાનમાં રાખીને બનાવવામાં આવ્યું છે, પછીથી ઉમેરવામાં નથી આવ્યું. એ બરાબર શું કવર કરે છે, અને હજુ શું બાકી છે, એ જાણવા અમારું <a href="/gu/accessibility.html">એક્સેસિબિલિટી</a> પેજ જુઓ.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>iOS વર્ઝન છે?</summary>
+            <div class="answer">
+              <p>હમણાં નથી — Zebal હાલમાં ફક્ત Android પર જ ઉપલબ્ધ છે.</p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>શું હું મારો ડેટા ડિલીટ કરી શકું?</summary>
+            <div class="answer">
+              <p>હા, ગમે ત્યારે, Settings માંથી — તમે ફક્ત આ ડિવાઇસનો ડેટા ભૂંસી શકો છો, અથવા તમારા ઓનલાઇન બેકઅપ સહિત આખું એકાઉન્ટ જ ડિલીટ કરી શકો છો. દરેક ઓપ્શન શું કરે છે એ જાણવા <a href="/gu/privacy.html">પ્રાઇવસી પોલિસી</a> જુઓ.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      <a href="/gu/guide/">યુઝર ગાઇડ</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/gu/privacy.html">પ્રાઇવસી પોલિસી</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/gu/terms.html">નિયમો અને શરતો</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/gu/credits.html">ક્રેડિટ્સ</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/gu/accessibility.html">એક્સેસિબિલિટી</a>
+    </p>
+    <p>સવાલ કે ફીડબેક છે? ઇમેઇલ કરો <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a></p>
+  </footer>
+
+</div>
+
+<script src="/greeting.js?v=1" defer></script>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

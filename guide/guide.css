@@ -1,0 +1,168 @@
+/*
+  Shared styles for the Zebal guide pages.
+
+  Kept in one file rather than repeated inside each page, so a change to
+  spacing or colour applies everywhere at once.
+
+  Colours mirror the app's own palette, and every text/background pair meets
+  the WCAG AA contrast minimum of 4.5:1 — the same standard the app was built
+  to. Sizes use rem so the browser's own text-size setting keeps working.
+*/
+
+:root {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --text: #1D1C1D;
+  --text-muted: #616061;
+  --primary: #0A66C2;
+  --primary-dark: #084E96;
+  --border: #E1E4E8;
+  --note-bg: #EAF3FB;
+  --note-border: #9EC5E8;
+  --warn-bg: #FFF8E1;
+  --warn-border: #F0C36D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --surface: #1E1E1E;
+    --text: #E3E3E3;
+    --text-muted: #A0A0A0;
+    --primary: #669DF6;
+    --primary-dark: #8AB4F8;
+    --border: #333333;
+    --note-bg: #16232E;
+    --note-border: #2C4A66;
+    --warn-bg: #2A2416;
+    --warn-border: #7A6320;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container { max-width: 720px; margin: 0 auto; padding: 24px; }
+
+/* Lets keyboard users jump past the navigation straight to the content.
+   Visible only when focused. */
+.skip-link {
+  position: absolute; left: -9999px;
+  background: var(--primary); color: #fff;
+  padding: 12px 20px; border-radius: 6px; z-index: 100;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+
+h1 { font-size: 2rem; margin: 32px 0 8px; line-height: 1.3; }
+h2 { font-size: 1.4rem; margin: 40px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+
+.lead { color: var(--text-muted); font-size: 1.1rem; margin: 0 0 32px; }
+
+a { color: var(--primary); }
+a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 10px; }
+
+/* A step-by-step sequence. Numbers matter here, so an ordered list is used
+   rather than styling that only looks numbered. */
+ol.steps { counter-reset: none; }
+ol.steps li { margin-bottom: 14px; }
+
+/* Card used for the section links on the guide index. */
+.card-link {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+.card-link:hover { border-color: var(--primary); }
+.card-link:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.card-link .title { display: block; font-weight: 600; font-size: 1.1rem; color: var(--primary); }
+.card-link .desc { display: block; color: var(--text-muted); margin-top: 4px; }
+
+.note, .warn {
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.note { background: var(--note-bg); border: 1px solid var(--note-border); }
+.warn { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+.note p, .warn p { margin: 0; }
+.note p + p, .warn p + p { margin-top: 10px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: var(--surface);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+th { font-weight: 600; }
+
+/* Marks a place in the app, e.g. Home tab or the Save Goal button. */
+.ui { 
+  font-weight: 600;
+  color: var(--text);
+}
+
+nav.crumbs { margin: 24px 0 0; font-size: 0.95rem; color: var(--text-muted); }
+
+/* Language switcher shown near the top of every guide page — a dropdown
+   (via lang.js) that jumps to the equivalent page in the chosen language.
+   The <noscript> fallback keeps a plain link working with JavaScript off. */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin: 16px 0 0;
+  color: var(--text-muted);
+}
+.lang-switch select {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-height: 36px;
+}
+.lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+.lang-switch noscript a { color: var(--primary); }
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding: 24px 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.next-prev {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.next-prev a { min-height: 48px; display: inline-flex; align-items: center; }

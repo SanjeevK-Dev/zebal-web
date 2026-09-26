@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>Budgets — Zebal Guide</title>
+<meta name="description" content="Setting a spending limit in Zebal, choosing a cycle, and carrying money forward.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/guide/budget.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/guide/budget.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/guide/budget.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/guide/budget.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/guide/budget.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/guide/budget.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/guide/budget.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/guide/budget.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/guide/budget.html">
+<link rel="stylesheet" href="guide.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="container">
+
+<nav class="crumbs"><a href="index.html">User Guide</a> / Budgets</nav>
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="Choose a language"></select>
+  <noscript><a href="/hi/guide/budget.html">हिंदी में पढ़ें</a></noscript>
+</div>
+
+<h1>Budgets</h1>
+<p class="lead">Setting a limit, and understanding what the numbers mean.</p>
+
+<main id="main">
+
+<h2>Setting a budget</h2>
+
+<ol class="steps">
+  <li>Open the <span class="ui">Budget</span> tab.</li>
+  <li>Choose a cycle from the dropdown.</li>
+  <li>Enter your limit.</li>
+  <li>Tap <span class="ui">Save Budget Limit</span>.</li>
+</ol>
+
+<h3>Cycles</h3>
+<table>
+  <thead>
+    <tr><th>Cycle</th><th>Runs</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="ui">Monthly Budget</span></td><td>1st to the last day of the month</td></tr>
+    <tr><td><span class="ui">Weekly Budget</span></td><td>Sunday to Saturday</td></tr>
+    <tr><td><span class="ui">15 Days (Fortnightly)</span></td><td>1st–15th, then 16th to month end</td></tr>
+    <tr><td><span class="ui">Yearly Budget</span></td><td>1 January to 31 December</td></tr>
+  </tbody>
+</table>
+
+<div class="note">
+  <p>
+    <strong>Cycles follow the calendar.</strong> If you set a monthly budget on
+    the 15th, it still ends on the last day of that month — not on the 15th of
+    the next one. This keeps the Budget tab and the rest of the app counting the
+    same months.
+  </p>
+</div>
+
+<h2>Reading the screen</h2>
+
+<table>
+  <thead>
+    <tr><th>What it shows</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="ui">Spent / Remaining</span></td>
+      <td>How much has gone out this cycle, and what's left.</td>
+    </tr>
+    <tr>
+      <td><span class="ui">Safe to Spend Today</span></td>
+      <td>Your remaining money divided by the days left. Stay under it and you'll finish the cycle within budget.</td>
+    </tr>
+    <tr>
+      <td>Progress bar</td>
+      <td>How far through your limit you are.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Zebal also alerts you when you cross 75% and 90% of your limit, so
+  overspending doesn't come as a surprise at the end.
+</p>
+
+<h2>Carrying money between cycles</h2>
+
+<p>Two settings decide what happens when a cycle ends:</p>
+
+<h3>Carry forward unspent amount</h3>
+<p>
+  Finish the month under budget and the leftover is added to next month's limit.
+  Spend ₹8,000 of a ₹10,000 budget, and next month you have ₹12,000.
+</p>
+
+<h3>Deduct overspent deficit from next cycle</h3>
+<p>
+  Go over and the excess is taken off next month. Spend ₹11,000 of a ₹10,000
+  budget, and next month you have ₹9,000.
+</p>
+
+<div class="note">
+  <p>
+    <strong>These two never clash.</strong> Each cycle either ends under budget
+    or over it, so only one of them can apply at a time. Turning both on simply
+    means you've decided what should happen in either case.
+  </p>
+</div>
+
+<h2>Before your cycle ends</h2>
+<p>
+  The day before a cycle finishes, Zebal sends a reminder to set your budget
+  for the next one. This arrives even if the app is closed.
+</p>
+
+<h2>If you don't set a new budget</h2>
+<p>
+  Each cycle starts fresh. If you haven't set a limit for the new period, the
+  Budget tab shows <span class="ui">No active budget limit set</span> rather
+  than silently reusing an old figure — a limit you set months ago may no longer
+  be the one you want.
+</p>
+<p>
+  Your past budgets are kept, and appear in your exported data so you can see
+  what your limit was in any earlier month.
+</p>
+
+<h2>AI advice and the weekly check-in</h2>
+
+<p>Two buttons appear once a budget is active:</p>
+
+<ul>
+  <li>
+    <span class="ui">Get Smart AI Advice</span> — a short, specific suggestion
+    based on where your money is actually going this cycle.
+  </li>
+  <li>
+    <span class="ui">View Weekly Check-in</span> — a review of how the week went,
+    what stood out, and one thing to try next week. This also arrives as a
+    notification once a week.
+  </li>
+</ul>
+
+<div class="warn">
+  <p>
+    AI suggestions are prompts to think about, not financial advice. The app
+    can only see what you've entered, and it can misread it. Any decision about
+    your money remains yours.
+  </p>
+</div>
+
+<h2>Group budgets</h2>
+<p>
+  Groups have their own separate budget, set by an admin. It works the same way
+  — limit, cycle, carry-forward — but applies to the group's shared spending.
+  See <a href="groups.html">Groups</a>.
+</p>
+
+<div class="next-prev">
+  <a href="expenses.html">&larr; Adding Expenses</a>
+  <a href="groups.html">Groups &rarr;</a>
+</div>
+
+</main>
+
+<footer>
+  <p>
+    <a href="/">Home</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/privacy.html">Privacy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/terms.html">Terms</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/accessibility.html">Accessibility</a>
+  </p>
+</footer>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

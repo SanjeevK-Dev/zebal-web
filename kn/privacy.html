@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>ಗೌಪ್ಯತಾ ನೀತಿ — Zebal</title>
+<meta name="description" content="Zebal ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಹೇಗೆ ಸಂಗ್ರಹಿಸುತ್ತದೆ, ಬಳಸುತ್ತದೆ ಮತ್ತು ರಕ್ಷಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತದೆ.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/privacy.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/privacy.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/privacy.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/privacy.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/privacy.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/privacy.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/privacy.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Kannada", sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+  .updated { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    background: var(--surface);
+  }
+  th, td {
+    border: 1px solid var(--border); padding: 12px;
+    text-align: left; vertical-align: top;
+  }
+  th { font-weight: 600; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ತೆರಳಿ</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ"></select>
+  <noscript><a href="/privacy.html">Read this page in English</a></noscript>
+</div>
+
+<h1>ಗೌಪ್ಯತಾ ನೀತಿ</h1>
+<p class="updated">ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ: 19 ಆಗಸ್ಟ್ 2026</p>
+
+<div class="note" style="background:#EAF3FB;border:1px solid #9EC5E8;border-radius:8px;padding:16px 20px;margin:20px 0;">
+  <p style="margin:0;">
+    ಈ ಅನುವಾದವನ್ನು ಕೇವಲ ಅನುಕೂಲಕ್ಕಾಗಿ ಮಾತ್ರ ಒದಗಿಸಲಾಗಿದೆ. ಕಾನೂನುಬದ್ಧವಾಗಿ ಮೂಲ
+    ಇಂಗ್ಲಿಷ್ ದಾಖಲೆಯೇ ಅಧಿಕೃತವಾದದ್ದು — ಯಾವುದೇ ವ್ಯತ್ಯಾಸ ಅಥವಾ ವಿವಾದ ಉಂಟಾದರೆ
+    ಇಂಗ್ಲಿಷ್ ಆವೃತ್ತಿಯೇ ಅನ್ವಯವಾಗುತ್ತದೆ. ಮೂಲ ದಾಖಲೆಯನ್ನು ಇಲ್ಲಿ ನೋಡಬಹುದು:
+    <a href="/privacy.html">ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಗೌಪ್ಯತಾ ನೀತಿ</a>.
+  </p>
+</div>
+
+<main id="main">
+
+<p>
+  Zebal ಆ್ಯಪ್ ಯಾವ ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ, ಅದನ್ನು ಏಕೆ
+  ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ, ಮತ್ತು ಅದರ ಮೇಲೆ ನಿಮಗೆ ಎಂತಹ ನಿಯಂತ್ರಣವಿದೆ ಎಂಬುದನ್ನು
+  ಈ ನೀತಿ ವಿವರಿಸುತ್ತದೆ. ಆ್ಯಪ್ ನಿಜವಾಗಿ ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು ಸರಳ
+  ಭಾಷೆಯಲ್ಲಿ ವಿವರಿಸುವ ರೀತಿಯಲ್ಲಿ ಇದನ್ನು ಬರೆಯಲಾಗಿದೆ.
+</p>
+
+<h2>ನಾವು ಯಾರು</h2>
+<p>
+  Zebal ಅನ್ನು Sanjeev Kumar (ಸ್ಥಾಪಕರು), Avinash Sharma ಮತ್ತು Rohit
+  Thakur (ಸಹ-ಸ್ಥಾಪಕರು) ರೂಪಿಸಿದ್ದಾರೆ. ಈ ನೀತಿ ಅಥವಾ ನಿಮ್ಮ ಡೇಟಾ ಕುರಿತು
+  ಯಾವುದೇ ಪ್ರಶ್ನೆಗೆ, ಇಮೇಲ್ ಮಾಡಿ
+  <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+</p>
+
+<h2>ನಾವು ಸಂಗ್ರಹಿಸುವ ಮಾಹಿತಿ</h2>
+
+<h3>ನೀವು ಒದಗಿಸುವ ಮಾಹಿತಿ</h3>
+<table>
+  <thead>
+    <tr><th>ಏನು</th><th>ಏಕೆ</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ಇಮೇಲ್ ವಿಳಾಸ ಅಥವಾ ಫೋನ್ ನಂಬರ್</td>
+      <td>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಿ ಸೈನ್ ಇನ್ ಮಾಡಲು, ಮತ್ತು ಹಂಚಿಕೊಂಡ ಗುಂಪಿನ ಇತರ ಸದಸ್ಯರಿಗೆ ನಿಮ್ಮನ್ನು ಗುರುತಿಸಲು.</td>
+    </tr>
+    <tr>
+      <td>ಡಿಸ್‌ಪ್ಲೇ ಹೆಸರು, ಲಿಂಗ, ಜನ್ಮ ದಿನಾಂಕ</td>
+      <td>ನಿಮ್ಮ ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ ಮತ್ತು ನೀವು ಸೇರುವ ಗುಂಪುಗಳ ಸದಸ್ಯರಿಗೆ ತೋರಿಸಲಾಗುತ್ತದೆ. ನಿಮ್ಮ ಹೆಸರನ್ನು ಹೊರತುಪಡಿಸಿ ಇವೆಲ್ಲ ಐಚ್ಛಿಕ.</td>
+    </tr>
+    <tr>
+      <td>UPI ID (ಐಚ್ಛಿಕ)</td>
+      <td>ಗುಂಪಿನ ಸದಸ್ಯರು ನಿಮ್ಮೊಂದಿಗೆ ಪಾವತಿಗಳನ್ನು ಸೆಟಲ್ ಮಾಡಿಕೊಳ್ಳಲು ಮಾತ್ರ ಇದನ್ನು ಬಳಸಲಾಗುತ್ತದೆ. ನಾವು ಎಂದಿಗೂ ಪಾವತಿಗಳನ್ನು ನಾವಾಗಿಯೇ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸುವುದಿಲ್ಲ.</td>
+    </tr>
+    <tr>
+      <td>ಖರ್ಚಿನ ದಾಖಲೆಗಳು — ವಸ್ತುವಿನ ಹೆಸರು, ಮೊತ್ತ, ವರ್ಗ, ದಿನಾಂಕ, ಯಾರು ಪಾವತಿಸಿದರು</td>
+      <td>ಇದು ಆ್ಯಪ್‌ನ ಪ್ರಮುಖ ಕಾರ್ಯ. ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ, ನೀವು Online Backup ಆನ್ ಮಾಡಿದರೆ ಮಾತ್ರ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಬ್ಯಾಕಪ್ ಆಗುತ್ತದೆ.</td>
+    </tr>
+    <tr>
+      <td>ರಸೀದಿ ಫೋಟೋಗಳು (ಐಚ್ಛಿಕ)</td>
+      <td>ನೀವು Receipt Scan ಬಳಸಲು ಆಯ್ಕೆ ಮಾಡಿಕೊಂಡರೆ ಮಾತ್ರ ತೆಗೆಯಲಾಗುತ್ತದೆ. ಮೊತ್ತ ಮತ್ತು ವಸ್ತುಗಳನ್ನು ಓದಿ ನಿಮ್ಮ ಪರವಾಗಿ ಖರ್ಚಿನ ಫಾರ್ಮ್ ಅನ್ನು ಭರ್ತಿ ಮಾಡಲು ಫೋಟೋವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ — ಫೋಟೋ ನಿಖರವಾಗಿ ಎಲ್ಲಿಗೆ ಹೋಗುತ್ತದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಲು ಕೆಳಗಿನ "Receipt Scan" ವಿಭಾಗವನ್ನು ನೋಡಿ.</td>
+    </tr>
+    <tr>
+      <td>ಗುಂಪಿನ ಸಂದೇಶಗಳು ಮತ್ತು ಹಂಚಿಕೊಂಡ ಖರ್ಚುಗಳು</td>
+      <td>ಆ ಗುಂಪಿನ ಸದಸ್ಯರಿಗೆ ಗೋಚರಿಸುತ್ತವೆ, ಇದರಿಂದ ಎಲ್ಲರೂ ಹಂಚಿಕೊಂಡ ವೆಚ್ಚಗಳನ್ನು ನೋಡಿ ಒಪ್ಪಿಗೆ ಸೂಚಿಸಬಹುದು.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>ಸಂಪರ್ಕಗಳು</h3>
+<p>
+  ನೀವು ನಿಮ್ಮ ಸಂಪರ್ಕಗಳಿಂದ ಯಾರನ್ನಾದರೂ ಗುಂಪಿಗೆ ಆಹ್ವಾನಿಸಲು
+  ಆಯ್ಕೆ ಮಾಡಿಕೊಂಡರೆ, ಆ ಸಮಯದಲ್ಲಿ ನಿಮ್ಮ ಸಂಪರ್ಕಗಳನ್ನು ಓದಲು ಆ್ಯಪ್
+  ಅನುಮತಿ ಕೇಳುತ್ತದೆ. ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ಸಂಪರ್ಕವನ್ನು ಆ ಒಂದು ಆಹ್ವಾನವನ್ನು
+  ಕಳುಹಿಸಲು ಮಾತ್ರ ಬಳಸಲಾಗುತ್ತದೆ. <strong>ನಿಮ್ಮ ಸಂಪರ್ಕ ಪಟ್ಟಿಯನ್ನು
+  ಎಂದಿಗೂ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ, ಸಂಗ್ರಹಿಸಲಾಗುವುದಿಲ್ಲ, ಅಥವಾ
+  ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</strong> ನೀವು ಈ ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಿ ಕೂಡ
+  ಆ್ಯಪ್ ಅನ್ನು ಬಳಸಬಹುದು — ಆಹ್ವಾನಗಳನ್ನು ಲಿಂಕ್ ಮೂಲಕವೂ ಕಳುಹಿಸಬಹುದು.
+</p>
+
+<h3>ನಾವು ಸಂಗ್ರಹಿಸದಿರುವುದು</h3>
+<ul>
+  <li>ನಾವು ನಿಮ್ಮ SMS ಸಂದೇಶಗಳನ್ನು ಓದುವುದಿಲ್ಲ.</li>
+  <li>ನಾವು ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಗಳನ್ನು ಪ್ರವೇಶಿಸುವುದಿಲ್ಲ ಅಥವಾ ಎಲ್ಲಿಂದಲೂ ನಿಮ್ಮ ವಹಿವಾಟುಗಳನ್ನು ಓದುವುದಿಲ್ಲ.</li>
+  <li>ನಾವು ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುವುದಿಲ್ಲ.</li>
+  <li>ನಾವು ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಎಂದಿಗೂ ಯಾರಿಗೂ ಮಾರುವುದಿಲ್ಲ.</li>
+  <li>ನಾವು ನಿಮ್ಮ ಆರ್ಥಿಕ ಡೇಟಾವನ್ನು ಜಾಹೀರಾತಿಗಾಗಿ ಬಳಸುವುದಿಲ್ಲ.</li>
+</ul>
+
+<h2>ನಿಮ್ಮ ಡೇಟಾ ಎಲ್ಲಿ ಸಂಗ್ರಹಿಸಲ್ಪಡುತ್ತದೆ</h2>
+<p>
+  ನಿಮ್ಮ ಖರ್ಚುಗಳನ್ನು <strong>ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ</strong>, ಎನ್‌ಕ್ರಿಪ್ಟ್
+  ಮಾಡಿದ ಸ್ಟೋರೇಜ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ.
+</p>
+<p>
+  ನೀವು Settings ನಲ್ಲಿ <strong>Online Backup</strong> ಆನ್ ಮಾಡಿದರೆ, ನಿಮ್ಮ
+  ಖರ್ಚುಗಳು ಮತ್ತು ಬಜೆಟ್ ಇತಿಹಾಸದ ಪ್ರತಿಯನ್ನು Google Firebase ನಲ್ಲಿಯೂ
+  ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ, ಇದರಿಂದ ನೀವು ಅದನ್ನು ಹೊಸ ಸಾಧನದಲ್ಲಿ restore
+  ಮಾಡಿಕೊಳ್ಳಬಹುದು. ಖಾತೆ ಅಸ್ತಿತ್ವಕ್ಕೆ ಬರುವವರೆಗೆ ಏನೂ ಅಪ್‌ಲೋಡ್
+  ಆಗುವುದಿಲ್ಲ ಎಂಬ ಅರ್ಥದಲ್ಲಿ ಇದು ಡೀಫಾಲ್ಟ್ ಆಗಿ ಆಫ್ ಆಗಿರುತ್ತದೆ —
+  ಮತ್ತು ನೀವು ಇದನ್ನು Settings ನಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ಆಫ್ ಮಾಡಬಹುದು.
+</p>
+<p>
+  ಹಂಚಿಕೊಂಡ ಗುಂಪಿನ ಡೇಟಾ — ಖರ್ಚುಗಳು, ಸಂದೇಶಗಳು ಮತ್ತು ಬ್ಯಾಲೆನ್ಸ್‌ಗಳು —
+  ಅಗತ್ಯದ ಕಾರಣ Firebase ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ, ಏಕೆಂದರೆ ಅದು
+  ಗುಂಪಿನ ಪ್ರತಿಯೊಬ್ಬ ಸದಸ್ಯರಿಗೂ ಗೋಚರಿಸಬೇಕಾಗುತ್ತದೆ.
+</p>
+
+<h2>AI ವೈಶಿಷ್ಟ್ಯಗಳು</h2>
+<p>
+  ಧ್ವನಿ ಖರ್ಚು ನಮೂದು, ವರ್ಗ ಸಲಹೆಗಳು, ಖರ್ಚಿನ ಸಾರಾಂಶಗಳು ಮತ್ತು "Ask AI"
+  ಪ್ರಶ್ನೆ ಬಾಕ್ಸ್‌ನಂತಹ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಶಕ್ತಗೊಳಿಸಲು, Zebal Firebase
+  AI Logic ಮೂಲಕ Google ನ Gemini ಮಾದರಿಗಳನ್ನು ಬಳಸುತ್ತದೆ.
+</p>
+<p>
+  ನೀವು ಈ ವೈಶಿಷ್ಟ್ಯಗಳಲ್ಲಿ ಒಂದನ್ನು ಬಳಸಿದಾಗ, ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು
+  ರೂಪಿಸಲು ಸಂಬಂಧಿತ ಖರ್ಚಿನ ಮಾಹಿತಿಯನ್ನು Google ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.
+  ಆ ವಿನಂತಿಗೆ ಅಗತ್ಯವಿರುವುದನ್ನು ಮಾತ್ರ ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಈ ಡೇಟಾವನ್ನು
+  Google ನ ಮಾದರಿಗಳಿಗೆ ತರಬೇತಿ ನೀಡಲು ಬಳಸಲಾಗುವುದಿಲ್ಲ. ನೀವು ಏನನ್ನೂ
+  ಕಳುಹಿಸಲು ಬಯಸದಿದ್ದರೆ, ಕೇವಲ AI ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಬಳಸಬೇಡಿ —
+  ಆ್ಯಪ್‌ನ ಪ್ರತಿಯೊಂದು ಭಾಗವೂ ಅವುಗಳಿಲ್ಲದೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.
+</p>
+
+<h2>Receipt Scan</h2>
+<p>
+  Receipt Scan ನಿಮ್ಮ ಸಾಧನದ ಕ್ಯಾಮೆರಾವನ್ನು (ನಿಮ್ಮ ಅನುಮತಿಯೊಂದಿಗೆ)
+  ಬಳಸಿ ರಸೀದಿಯ ಫೋಟೋ ತೆಗೆಯುತ್ತದೆ. ಧ್ವನಿ ಮತ್ತು ಪಠ್ಯ ನಮೂದುಗಳು
+  ಕಳುಹಿಸಲ್ಪಡುವ ಅದೇ ರೀತಿಯಲ್ಲಿ ಆ ಫೋಟೋವನ್ನು Google ನ AI ಗೆ
+  ಕಳುಹಿಸಲಾಗುತ್ತದೆ (ಮೇಲಿನ <strong>AI ವೈಶಿಷ್ಟ್ಯಗಳು</strong> ನೋಡಿ),
+  ಇದರಿಂದ ಅದು ಮೊತ್ತ ಮತ್ತು ವಸ್ತುಗಳನ್ನು ಓದಿ ನಿಮ್ಮ ಪರವಾಗಿ ಖರ್ಚಿನ
+  ಫಾರ್ಮ್ ಅನ್ನು ಭರ್ತಿ ಮಾಡಬಹುದು. ಏನಾದರೂ ಉಳಿಸುವ ಮೊದಲು ಅದು ಏನನ್ನು
+  ಓದಿತು ಎಂಬುದನ್ನು ನೀವು ಯಾವಾಗಲೂ ನೋಡಬಹುದು.
+</p>
+<p>
+  ನಿಮ್ಮ ಆ್ಯಪ್ ಆವೃತ್ತಿಯನ್ನು ಅವಲಂಬಿಸಿ, ಫೋಟೋದ ಒಂದು ಪ್ರತಿಯನ್ನು ಸಹ
+  ಇರಿಸಬಹುದು, ಇದರಿಂದ ನೀವು ಅದನ್ನು ನಂತರ ಆ ಖರ್ಚಿನಿಂದ ಮತ್ತೆ
+  ತೆರೆಯಬಹುದು — ಈ ಪ್ರತಿಯನ್ನು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ,
+  ನಮ್ಮ ಸರ್ವರ್‌ಗಳಲ್ಲಿ ಅಲ್ಲ. ಗುಂಪಿನ ಖರ್ಚಿಗಾಗಿ, ಬೇರೆ ಯಾವುದೇ ಖರ್ಚಿನ
+  ವಿವರದಂತೆಯೇ ಫೋಟೋವನ್ನು ಸಹ ಆ ಗುಂಪಿನೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಬಹುದು, ಇದರಿಂದ
+  ಏನನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಲಾಗಿದೆ ಎಂಬುದನ್ನು ಸದಸ್ಯರು ನೋಡಬಹುದು.
+</p>
+<p>
+  ನೀವು ಕ್ಯಾಮೆರಾ ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಿ ಕೂಡ ಆ್ಯಪ್‌ನ ಪ್ರತಿಯೊಂದು
+  ಭಾಗವನ್ನು ಬಳಸಬಹುದು — Receipt Scan ಸಂಪೂರ್ಣವಾಗಿ ಐಚ್ಛಿಕ, ಮತ್ತು
+  ಖರ್ಚುಗಳನ್ನು ಯಾವಾಗಲೂ ಟೈಪ್ ಮಾಡಿ ಅಥವಾ ಮಾತನಾಡಿ ಕೂಡ ಸೇರಿಸಬಹುದು.
+</p>
+
+<h2>ನಾವು ಬಳಸುವ ಸೇವೆಗಳು</h2>
+<ul>
+  <li><strong>Google Firebase</strong> — ಸೈನ್-ಇನ್, ಬ್ಯಾಕಪ್‌ಗಳು ಮತ್ತು ಗುಂಪಿನ ಡೇಟಾಗಾಗಿ ಕ್ಲೌಡ್ ಸ್ಟೋರೇಜ್.</li>
+  <li><strong>Google Play Billing</strong> — ಚಂದಾದಾರಿಕೆ ಖರೀದಿಗಳು. ಎಲ್ಲಾ ಪಾವತಿ ವಿವರಗಳನ್ನು Google ನಿರ್ವಹಿಸುತ್ತದೆ; ನಿಮ್ಮ ಕಾರ್ಡ್ ಮಾಹಿತಿಯನ್ನು ನಾವು ಎಂದಿಗೂ ನೋಡುವುದಿಲ್ಲ.</li>
+  <li><strong>Firebase AI Logic (Gemini)</strong> — ಮೇಲೆ ವಿವರಿಸಿದ AI ವೈಶಿಷ್ಟ್ಯಗಳು.</li>
+  <li><strong>OneSignal</strong> — ನಿಮ್ಮ ಗುಂಪುಗಳ ಕುರಿತು ಪುಶ್ ಅಧಿಸೂಚನೆಗಳು.</li>
+  <li><strong>Google AdMob</strong> — AI ಕ್ರೆಡಿಟ್‌ಗಳನ್ನು ಗಳಿಸಲು ನೀವು ಒಂದು ಜಾಹೀರಾತನ್ನು ನೋಡಲು ಆಯ್ಕೆ ಮಾಡಿಕೊಂಡರೆ, ಐಚ್ಛಿಕ ರಿವಾರ್ಡೆಡ್ ಜಾಹೀರಾತುಗಳು. ಜಾಹೀರಾತುಗಳನ್ನು ಎಂದಿಗೂ ನಿಮ್ಮ ಮೇಲೆ ಬಲವಂತವಾಗಿ ತೋರಿಸಲಾಗುವುದಿಲ್ಲ.</li>
+</ul>
+<p>
+  ಇವುಗಳಲ್ಲಿ ಪ್ರತಿಯೊಂದೂ ತಾವು ಸ್ವೀಕರಿಸುವ ಡೇಟಾವನ್ನು ಹೇಗೆ
+  ನಿರ್ವಹಿಸುತ್ತವೆ ಎಂಬುದನ್ನು ನಿಯಂತ್ರಿಸುವ ತನ್ನದೇ ಆದ ಗೌಪ್ಯತಾ
+  ನೀತಿಯನ್ನು ಹೊಂದಿದೆ.
+</p>
+
+<h2>ನಿಮ್ಮ ಹಕ್ಕುಗಳು ಮತ್ತು ನಿಯಂತ್ರಣಗಳು</h2>
+<ul>
+  <li><strong>Online Backup ಆಫ್ ಮಾಡಿ</strong> — Settings, Data &amp; Cloud Backup ವಿಭಾಗದಲ್ಲಿ. ಆಗ ನಿಮ್ಮ ಡೇಟಾ ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ.</li>
+  <li><strong>ಲೋಕಲ್ ಡೇಟಾವನ್ನು ಅಳಿಸಿ</strong> — Settings, "Erase All Local App Data".</li>
+  <li><strong>ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಅಳಿಸಿ</strong> — Settings, "Delete My Account Permanently". ಇದು ನಿಮ್ಮ ಖಾತೆ, ನಿಮ್ಮ ಪ್ರೊಫೈಲ್, ಮತ್ತು ನಿಮ್ಮ ಆನ್‌ಲೈನ್ ಬ್ಯಾಕಪ್ ಅನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ.</li>
+  <li><strong>ನಿಮ್ಮ ಡೇಟಾವನ್ನು ರಫ್ತು ಮಾಡಿ</strong> — ಮೆನು CSV ಮತ್ತು ಪಠ್ಯ ರಫ್ತನ್ನು ನೀಡುತ್ತದೆ, ಇದರಿಂದ ನೀವು ಯಾವಾಗ ಬೇಕಾದರೂ ನಿಮ್ಮ ಸ್ವಂತ ಪ್ರತಿಯನ್ನು ಇಟ್ಟುಕೊಳ್ಳಬಹುದು.</li>
+  <li><strong>ಅನುಮತಿಗಳನ್ನು ನಿರಾಕರಿಸಿ</strong> — ಸಂಪರ್ಕಗಳು ಮತ್ತು ಅಧಿಸೂಚನೆಗಳು ಎರಡೂ ಐಚ್ಛಿಕ.</li>
+</ul>
+
+<h2>ಮಕ್ಕಳು</h2>
+<p>
+  Zebal 13 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ವಯಸ್ಸಿನ ಮಕ್ಕಳಿಗಾಗಿ ಉದ್ದೇಶಿಸಿಲ್ಲ,
+  ಮತ್ತು ನಾವು ತಿಳಿದೂ ಅವರಿಂದ ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ. ಯಾವುದೇ
+  ಮಗು ನಮಗೆ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸಿದೆ ಎಂದು ನೀವು ಭಾವಿಸಿದರೆ,
+  ದಯವಿಟ್ಟು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ, ನಾವು ಅದನ್ನು ಅಳಿಸುತ್ತೇವೆ.
+</p>
+
+<h2>ಡೇಟಾ ಧಾರಣೆ</h2>
+<p>
+  ನಿಮ್ಮ ಖಾತೆ ಅಸ್ತಿತ್ವದಲ್ಲಿರುವವರೆಗೆ ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಇರಿಸಲಾಗುತ್ತದೆ.
+  Settings ನಲ್ಲಿನ ಆಯ್ಕೆಯನ್ನು ಬಳಸಿ ನೀವು ನಿಮ್ಮ ಖಾತೆಯನ್ನು
+  ಅಳಿಸಿದಾಗ, ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಮತ್ತು ಆನ್‌ಲೈನ್ ಬ್ಯಾಕಪ್
+  ಅಳಿಸಲ್ಪಡುತ್ತದೆ. ನೀವು ಒಂದು ಗುಂಪಿನಲ್ಲಿ ಹಂಚಿಕೊಂಡ ಡೇಟಾ ಆ
+  ಗುಂಪಿಗೆ ಗೋಚರಿಸುವ ರೀತಿಯಲ್ಲಿ ಮುಂದುವರಿಯಬಹುದು, ಏಕೆಂದರೆ ಅದು
+  ಇತರ ಸದಸ್ಯರು ಅವಲಂಬಿಸಿರುವ ಹಂಚಿಕೆಯ ದಾಖಲೆಯ ಭಾಗವಾಗಿದೆ.
+</p>
+
+<h2>ಈ ನೀತಿಯಲ್ಲಿನ ಬದಲಾವಣೆಗಳು</h2>
+<p>
+  ಈ ನೀತಿ ನಿಮ್ಮ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುವ ರೀತಿಯಲ್ಲಿ ಬದಲಾದರೆ, ಮೇಲಿನ
+  ದಿನಾಂಕವನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ. ಮಹತ್ವದ ಬದಲಾವಣೆಗಳನ್ನು ಆ್ಯಪ್‌ನಲ್ಲಿಯೂ
+  ಪ್ರಕಟಿಸಲಾಗುತ್ತದೆ.
+</p>
+
+<h2>ಸಂಪರ್ಕಿಸಿ</h2>
+<p>
+  ನಿಮ್ಮ ಗೌಪ್ಯತೆಯ ಕುರಿತು ಯಾವುದೇ ಪ್ರಶ್ನೆಗೆ, ಅಥವಾ ನಿಮ್ಮ ಡೇಟಾವನ್ನು
+  ಅಳಿಸಲು ವಿನಂತಿಸಲು, ಇಮೇಲ್ ಮಾಡಿ
+  <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+</p>
+
+<p>
+  ಚಂದಾದಾರಿಕೆಗಳು, ಗುಂಪುಗಳು ಮತ್ತು ಪಾವತಿಗಳನ್ನು ಒಳಗೊಂಡಿರುವ ನಮ್ಮ
+  <a href="terms.html">ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು</a> ಪುಟವನ್ನು ಮತ್ತು ನಮ್ಮ
+  <a href="accessibility.html">ಪ್ರವೇಶಿಸುವಿಕೆ</a> ಪುಟವನ್ನು ಸಹ ನೋಡಿ.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Zebal ಗೆ ಹಿಂತಿರುಗಿ</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

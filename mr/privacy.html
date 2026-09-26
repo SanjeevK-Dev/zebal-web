@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>गोपनीयता धोरण — Zebal</title>
+<meta name="description" content="Zebal तुमची माहिती कशी गोळा करते, वापरते आणि सुरक्षित ठेवते.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/privacy.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/privacy.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/privacy.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/privacy.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/privacy.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/privacy.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/privacy.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/privacy.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+  .updated { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    background: var(--surface);
+  }
+  th, td {
+    border: 1px solid var(--border); padding: 12px;
+    text-align: left; vertical-align: top;
+  }
+  th { font-weight: 600; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">मुख्य मजकुरावर जा</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="भाषा निवडा"></select>
+  <noscript><a href="/privacy.html">Read this page in English</a></noscript>
+</div>
+
+<h1>गोपनीयता धोरण</h1>
+<p class="updated">शेवटचे अद्ययावत: 19 ऑगस्ट 2026</p>
+
+<div class="note" style="background:#EAF3FB;border:1px solid #9EC5E8;border-radius:8px;padding:16px 20px;margin:20px 0;">
+  <p style="margin:0;">
+    हे भाषांतर फक्त सोयीसाठी आहे. कायदेशीरदृष्ट्या मूळ इंग्रजी दस्तऐवजच वैध
+    आहे — कोणताही फरक किंवा वाद असल्यास इंग्रजी आवृत्ती लागू होईल. मूळ
+    दस्तऐवज येथे पहा: <a href="/privacy.html">इंग्रजीत गोपनीयता धोरण</a>.
+  </p>
+</div>
+
+<main id="main">
+
+<p>
+  हे धोरण स्पष्ट करते की Zebal अॅप कोणती माहिती गोळा करते, ती का गोळा केली
+  जाते, आणि त्यावर तुमचे किती नियंत्रण आहे. अॅप प्रत्यक्षात काय करते हे साध्या
+  भाषेत सांगण्यासाठी हे लिहिले आहे.
+</p>
+
+<h2>आम्ही कोण आहोत</h2>
+<p>
+  Zebal हे Sanjeev Kumar (संस्थापक), Avinash Sharma आणि Rohit Thakur
+  (सह-संस्थापक) यांनी तयार केले आहे. या धोरणाबद्दल किंवा तुमच्या डेटाबद्दल
+  कोणत्याही प्रश्नासाठी, ईमेल करा
+  <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+</p>
+
+<h2>आम्ही कोणती माहिती गोळा करतो</h2>
+
+<h3>तुम्ही दिलेली माहिती</h3>
+<table>
+  <thead>
+    <tr><th>काय</th><th>का</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ईमेल पत्ता किंवा फोन नंबर</td>
+      <td>तुमचे खाते तयार करण्यासाठी आणि साइन इन करण्यासाठी, आणि शेअर केलेल्या ग्रुपच्या इतर सदस्यांना तुमची ओळख पटवण्यासाठी.</td>
+    </tr>
+    <tr>
+      <td>डिस्प्ले नाव, लिंग, जन्मतारीख</td>
+      <td>तुमच्या प्रोफाइलवर आणि तुम्ही सामील झालेल्या ग्रुपच्या सदस्यांना दाखवले जाते. नाव सोडून हे सर्व पर्यायी आहे.</td>
+    </tr>
+    <tr>
+      <td>UPI ID (पर्यायी)</td>
+      <td>फक्त ग्रुप सदस्यांना तुमच्यासोबत पेमेंट सेटल करता यावे यासाठी वापरले जाते. आम्ही स्वतः कधीही पेमेंट प्रोसेस करत नाही.</td>
+    </tr>
+    <tr>
+      <td>खर्चाच्या नोंदी — वस्तूचे नाव, रक्कम, श्रेणी, तारीख, कोणी भरले</td>
+      <td>हे अॅपचे मुख्य कार्य आहे. तुमच्या डिव्हाइसवर साठवले जाते, आणि तुम्ही Online Backup चालू केले तरच ऑनलाइन बॅकअप घेतला जातो.</td>
+    </tr>
+    <tr>
+      <td>पावतीचे फोटो (पर्यायी)</td>
+      <td>तुम्ही Receipt Scan वापरणे निवडले तरच घेतले जातात. रक्कम आणि वस्तू वाचून तुमच्यासाठी खर्च फॉर्म भरण्यासाठी फोटो वापरला जातो — फोटो नक्की कुठे जातो हे खाली "Receipt Scan" मध्ये पहा.</td>
+    </tr>
+    <tr>
+      <td>ग्रुप संदेश आणि शेअर केलेले खर्च</td>
+      <td>त्या ग्रुपच्या सदस्यांना दिसतात, जेणेकरून सगळे शेअर केलेल्या खर्चांवर पाहू आणि सहमत होऊ शकतात.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>कॉन्टॅक्ट्स</h3>
+<p>
+  जर तुम्ही तुमच्या कॉन्टॅक्ट्समधून कोणाला ग्रुपमध्ये आमंत्रित करणे निवडले,
+  तर अॅप त्या क्षणी तुमचे कॉन्टॅक्ट्स वाचण्याची परवानगी मागते. तुम्ही निवडलेला
+  कॉन्टॅक्ट फक्त तेच एक आमंत्रण पाठवण्यासाठी वापरला जातो. <strong>तुमची
+  कॉन्टॅक्ट लिस्ट कधीही अपलोड, साठवली किंवा शेअर केली जात नाही.</strong> तुम्ही
+  ही परवानगी नाकारूनही अॅप वापरू शकता — आमंत्रणे लिंकद्वारेही पाठवता येतात.
+</p>
+
+<h3>आम्ही काय गोळा करत नाही</h3>
+<ul>
+  <li>आम्ही तुमचे SMS संदेश वाचत नाही.</li>
+  <li>आम्ही तुमच्या बँक खात्यांमध्ये प्रवेश करत नाही किंवा कोठूनही तुमचे व्यवहार वाचत नाही.</li>
+  <li>आम्ही तुमचे लोकेशन ट्रॅक करत नाही.</li>
+  <li>आम्ही तुमचा डेटा कधीही कोणालाही विकत नाही.</li>
+  <li>आम्ही तुमच्या आर्थिक डेटाचा जाहिरातींसाठी वापर करत नाही.</li>
+</ul>
+
+<h2>तुमचा डेटा कुठे साठवला जातो</h2>
+<p>
+  तुमचे खर्च <strong>तुमच्या डिव्हाइसवर</strong>, एन्क्रिप्टेड स्टोरेजमध्ये
+  साठवले जातात.
+</p>
+<p>
+  जर तुम्ही Settings मध्ये <strong>Online Backup</strong> चालू केले, तर
+  तुमच्या खर्च आणि बजेट हिस्ट्रीची एक कॉपी Google Firebase मध्येही साठवली
+  जाते जेणेकरून तुम्ही नवीन डिव्हाइसवर रिस्टोअर करू शकता. खाते अस्तित्वात
+  येईपर्यंत काहीही अपलोड होत नाही या अर्थाने हे डीफॉल्टनुसार बंद असते — आणि
+  तुम्ही ते Settings मध्ये कधीही बंद करू शकता.
+</p>
+<p>
+  शेअर केलेला ग्रुप डेटा — खर्च, संदेश आणि बॅलेन्स — गरजेनुसार Firebase मध्ये
+  साठवला जातो, कारण तो ग्रुपच्या प्रत्येक सदस्याला दिसणे आवश्यक असते.
+</p>
+
+<h2>AI सुविधा</h2>
+<p>
+  Zebal Firebase AI Logic द्वारे Google च्या Gemini मॉडेल्सचा वापर करते,
+  जसे की व्हॉइस खर्च एंट्री, श्रेणी सुचवणे, खर्चाचे सारांश, आणि "Ask AI"
+  प्रश्न बॉक्ससाठी.
+</p>
+<p>
+  तुम्ही यापैकी एखादी सुविधा वापरता तेव्हा, उत्तर तयार करण्यासाठी संबंधित
+  खर्चाची माहिती Google कडे पाठवली जाते. फक्त त्या रिक्वेस्टसाठी आवश्यक असलेले
+  तेवढेच पाठवले जाते. हा डेटा Google च्या मॉडेल्सना ट्रेन करण्यासाठी वापरला
+  जात नाही. जर तुम्हाला काहीही पाठवायचे नसेल, तर फक्त AI सुविधा वापरू नका —
+  अॅपचा प्रत्येक भाग त्यांच्याशिवायही काम करतो.
+</p>
+
+<h2>Receipt Scan</h2>
+<p>
+  Receipt Scan तुमच्या डिव्हाइसच्या कॅमेराचा (तुमच्या परवानगीने) वापर करून
+  पावतीचा फोटो घेते. तो फोटो Google च्या AI कडे पाठवला जातो, वॉइस आणि टेक्स्ट
+  एंट्रीप्रमाणेच (वर <strong>AI सुविधा</strong> पहा), जेणेकरून ते रक्कम आणि
+  वस्तू वाचून तुमच्यासाठी खर्च फॉर्म भरू शकेल. काहीही सेव्ह होण्याआधी तुम्ही
+  नेहमी ते काय वाचले ते पाहता.
+</p>
+<p>
+  तुमच्या अॅप व्हर्जनवर अवलंबून, फोटोची एक कॉपी ठेवली जाऊ शकते जेणेकरून तुम्ही
+  नंतर त्या खर्चातून ती पुन्हा उघडू शकाल — ही कॉपी तुमच्या डिव्हाइसवर साठवली
+  जाते, आमच्या सर्व्हरवर नाही. ग्रुप खर्चासाठी, इतर कोणत्याही खर्च तपशीलाप्रमाणेच
+  फोटो त्या ग्रुपसोबतही शेअर केला जाऊ शकतो, जेणेकरून सदस्यांना काय स्कॅन केले
+  ते दिसू शकेल.
+</p>
+<p>
+  तुम्ही कॅमेरा परवानगी नाकारूनही अॅपचा प्रत्येक भाग वापरू शकता — Receipt
+  Scan पूर्णपणे पर्यायी आहे, आणि खर्च नेहमी टाइप करून किंवा बोलून जोडता येतात.
+</p>
+
+<h2>आम्ही वापरत असलेल्या सेवा</h2>
+<ul>
+  <li><strong>Google Firebase</strong> — साइन-इन, बॅकअप आणि ग्रुप डेटासाठी क्लाउड स्टोरेज.</li>
+  <li><strong>Google Play Billing</strong> — सबस्क्रिप्शन खरेदी. सर्व पेमेंट तपशील Google हाताळते; आम्ही तुमची कार्ड माहिती कधीही पाहत नाही.</li>
+  <li><strong>Firebase AI Logic (Gemini)</strong> — वर वर्णन केलेल्या AI सुविधा.</li>
+  <li><strong>OneSignal</strong> — तुमच्या ग्रुप्सबद्दल पुश नोटिफिकेशन.</li>
+  <li><strong>Google AdMob</strong> — पर्यायी रिवॉर्डेड जाहिराती, जर तुम्ही AI क्रेडिट्स मिळवण्यासाठी एखादी पाहणे निवडले तर. जाहिराती तुमच्यावर कधीही सक्तीने लादल्या जात नाहीत.</li>
+</ul>
+<p>
+  यापैकी प्रत्येक सेवेचे स्वतःचे गोपनीयता धोरण आहे जे ते मिळालेला डेटा कसा
+  हाताळतात हे ठरवते.
+</p>
+
+<h2>तुमचे अधिकार आणि नियंत्रणे</h2>
+<ul>
+  <li><strong>Online Backup बंद करा</strong> — Settings, Data &amp; Cloud Backup अंतर्गत. त्यानंतर तुमचा डेटा फक्त तुमच्या डिव्हाइसवरच राहतो.</li>
+  <li><strong>स्थानिक डेटा मिटवा</strong> — Settings, "Erase All Local App Data".</li>
+  <li><strong>तुमचे संपूर्ण खाते डिलीट करा</strong> — Settings, "Delete My Account Permanently". हे तुमचे खाते, प्रोफाइल आणि ऑनलाइन बॅकअप काढून टाकते.</li>
+  <li><strong>तुमचा डेटा एक्सपोर्ट करा</strong> — मेन्यूमध्ये CSV आणि टेक्स्ट एक्सपोर्ट उपलब्ध आहे, जेणेकरून तुम्ही कधीही स्वतःची कॉपी ठेवू शकता.</li>
+  <li><strong>परवानग्या नाकारा</strong> — कॉन्टॅक्ट्स आणि नोटिफिकेशन्स दोन्ही पर्यायी आहेत.</li>
+</ul>
+
+<h2>मुले</h2>
+<p>
+  Zebal 13 वर्षांखालील मुलांसाठी नाही, आणि आम्ही जाणूनबुजून त्यांच्याकडून
+  माहिती गोळा करत नाही. जर तुम्हाला वाटत असेल की एखाद्या मुलाने आम्हाला वैयक्तिक
+  माहिती दिली आहे, तर कृपया आमच्याशी संपर्क साधा आणि आम्ही ती डिलीट करू.
+</p>
+
+<h2>डेटा किती काळ ठेवला जातो</h2>
+<p>
+  तुमचे खाते अस्तित्वात असेपर्यंत तुमचा डेटा ठेवला जातो. जेव्हा तुम्ही Settings
+  मधील पर्याय वापरून तुमचे खाते डिलीट करता, तेव्हा तुमचे प्रोफाइल आणि ऑनलाइन
+  बॅकअप डिलीट केले जातात. तुम्ही ग्रुपमध्ये शेअर केलेला डेटा त्या ग्रुपला
+  दिसत राहू शकतो, कारण तो इतर सदस्य ज्यावर अवलंबून आहेत अशा शेअर्ड रेकॉर्डचा
+  भाग बनतो.
+</p>
+
+<h2>या धोरणातील बदल</h2>
+<p>
+  हे धोरण तुमच्यावर परिणाम करणाऱ्या पद्धतीने बदलल्यास, वरची तारीख अद्ययावत
+  केली जाईल. महत्त्वाचे बदल अॅपमध्येही जाहीर केले जातील.
+</p>
+
+<h2>संपर्क</h2>
+<p>
+  तुमच्या गोपनीयतेबद्दल कोणत्याही प्रश्नासाठी, किंवा तुमचा डेटा डिलीट करण्याची
+  विनंती करण्यासाठी, ईमेल करा
+  <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+</p>
+
+<p>
+  हे देखील पहा आमचे <a href="terms.html">नियम व अटी</a>, जे सबस्क्रिप्शन,
+  ग्रुप आणि पेमेंट्सबद्दल आहे, आणि आमचे
+  <a href="accessibility.html">सुलभता</a> पान.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Zebal वर परत जा</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

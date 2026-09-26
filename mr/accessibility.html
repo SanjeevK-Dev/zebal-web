@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>सुलभता — Zebal</title>
+<meta name="description" content="Zebal च्या सुलभता सुविधा, आम्ही ज्या स्टँडर्डनुसार तयार करतो, आम्ही कसे टेस्ट करतो, आणि समस्या कशी कळवावी.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/accessibility.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/accessibility.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/accessibility.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/accessibility.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/accessibility.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/accessibility.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/accessibility.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/accessibility.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/accessibility.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+    --note-bg: #EAF3FB; --note-border: #9EC5E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+      --note-bg: #16232E; --note-border: #2C4A66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  .intro { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 10px; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">मुख्य मजकुरावर जा</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="भाषा निवडा"></select>
+  <noscript><a href="/accessibility.html">Read this page in English</a></noscript>
+</div>
+
+<h1>सुलभता</h1>
+<p class="intro">Zebal सुलभतेसाठी काय करते, प्रामाणिकपणे — ज्यात अजून पूर्ण न झालेल्या गोष्टींचाही समावेश आहे.</p>
+
+<main id="main">
+
+<h2>आमची बांधिलकी</h2>
+<p>
+  Zebal सुरुवातीपासूनच स्क्रीन रीडर वापरणारे, कमी दृष्टी असणारे, आणि टाइप
+  करणे कठीण वाटणाऱ्या कोणालाही लक्षात घेऊन बनवले होते — नंतर जोडलेले नाही.
+  व्हॉइस इनपुट अस्तित्वात आहे कारण प्रत्येक खर्च टाइप करणे बऱ्याच लोकांसाठी
+  खरोखरचा अडथळा आहे, फक्त सोयीची सुविधा नाही.
+</p>
+
+<h2>यात काय समाविष्ट आहे</h2>
+<ul>
+  <li><strong>स्क्रीन रीडर सपोर्ट.</strong> प्रत्येक कंट्रोल लेबल केलेले आहे, आणि सुविधा तयार होताना TalkBack थेट अॅपवर टेस्ट केले जाते, फक्त नंतर तपासले जात नाही.</li>
+  <li><strong>बदलता येणारा मजकूर आकार.</strong> अॅपमध्ये निश्चित केलेल्या आकाराऐवजी मजकूर तुमच्या डिव्हाइसच्या स्वतःच्या फॉन्ट साइज सेटिंगचे अनुसरण करतो.</li>
+  <li><strong>डार्क मोड.</strong> पूर्ण डार्क थीम, फक्त उलटा केलेला कलर फिल्टर नाही.</li>
+  <li><strong>किमान टच टार्गेट आकार.</strong> बटणे आणि टॅप करण्यायोग्य कंट्रोल्स इतके मोठे आहेत की मर्यादित फाइन मोटर कंट्रोल असलेल्यांसाठीही ते विश्वासाने दाबता येतात.</li>
+  <li><strong>कधीही फक्त रंग नाही.</strong> जिथेही स्टेटस रंगाने दाखवला जातो (जसे सेटल्ड विरुद्ध न भरलेला स्प्लिट), तो मजकुरातही सांगितला जातो — रंग कधीही एकमेव संकेत नसतो.</li>
+  <li><strong>एकापेक्षा जास्त भाषेत आवाज.</strong> खर्च बोलून सांगणे इंग्रजी, हिंदी आणि इतर भाषांमध्ये चालते, त्यामुळे तुम्ही एका लिपीत टाइप करण्यापुरते मर्यादित नाही.</li>
+</ul>
+
+<h2>आम्ही ज्या स्टँडर्डनुसार तयार करतो</h2>
+<p>
+  आम्ही <strong>WCAG 2.1 Level AA</strong> हे आमचे अंतर्गत बेंचमार्क म्हणून
+  वापरून तयार करतो — हाच स्टँडर्ड अॅपच्या स्वतःच्या कोडमध्ये आणि या
+  वेबसाइटवर सर्वत्र वापरला जातो (कॉन्ट्रास्ट रेशो, फोकस इंडिकेशन, टच टार्गेट
+  साइजिंग).
+</p>
+<div class="note">
+  <p>
+    स्पष्ट सांगायचे झाल्यास: हा स्टँडर्ड आम्ही स्वतःला लावून घेतो, हे
+    सर्टिफिकेशन नाही. Zebal कोणत्याही औपचारिक तृतीय-पक्ष सुलभता ऑडिटमधून
+    गेलेले नाही. इथे जे आहे ते एका छोट्या टीमच्या खऱ्या, सतत सुरू असलेल्या
+    प्रयत्नांना दर्शवते — कंप्लायन्स गॅरंटी नाही.
+  </p>
+</div>
+
+<h2>आम्ही कसे टेस्ट करतो</h2>
+<p>
+  मुख्यतः प्रत्येक सुविधा तयार करताना खऱ्या Android डिव्हाइसवर TalkBack
+  वापरून, फक्त शेवटी टेस्ट करण्याऐवजी. संबंधित असेल तिथे कीबोर्ड आणि
+  स्विच-स्टाइल नेव्हिगेशन तपासले जाते. रोज ही साधने वापरणारे लोक जेव्हा
+  काहीतरी काम करत नाही हे सांगतात त्यावरही आम्ही अवलंबून असतो — खाली
+  "समस्या कळवा" पहा.
+</p>
+
+<h2>ही वेबसाइट</h2>
+<p>
+  इथेही तेच तत्त्वे लागू होतात: प्रत्येक मजकूर/बॅकग्राउंड कलर जोडी 4.5:1
+  किमान कॉन्ट्रास्ट पूर्ण करते, कीबोर्डने नेव्हिगेट करताना फोकस नेहमी दिसतो,
+  एक स्किप लिंक तुम्हाला हेडर ओलांडून थेट पुढे जाऊ देते, आणि मजकूर आकारांसाठी
+  rem युनिट्स वापरली जातात जेणेकरून तुमच्या ब्राउझरची स्वतःची टेक्स्ट-साइज
+  सेटिंग काम करत राहते.
+</p>
+
+<h2>ज्ञात मर्यादा</h2>
+<ul>
+  <li>Zebal सध्या फक्त Android वर आहे — याचे iOS व्हर्जन नाही, त्यामुळे इथे काहीही VoiceOver विरुद्ध टेस्ट केलेले नाही.</li>
+  <li>Receipt Scan स्कॅन केलेल्या फोटोचे स्वतःचे वर्णन जोडत नाही — पावतीची इमेज मोठ्याने वाचणे हे आमच्या स्वतः बनवलेल्या कशावरही नव्हे तर तुमच्या डिव्हाइसच्या स्वतःच्या बिल्ट-इन "इमेज वर्णन करा" सुविधेवर अवलंबून असते.</li>
+  <li>वर सांगितल्याप्रमाणे, अजून कोणतेही स्वतंत्र सुलभता ऑडिट नाही. जर तुम्ही सहाय्यक तंत्रज्ञानावर अवलंबून असाल आणि काहीतरी काम करत नाही असे आढळले, तर आम्हाला ते खरोखर जाणून घ्यायला आवडेल — "सर्व काही ठीक आहे" असे सांगणाऱ्या बॅजपेक्षा ते आमच्यासाठी जास्त उपयुक्त आहे.</li>
+</ul>
+
+<h2>समस्या कळवा</h2>
+<p>
+  अॅपमध्ये किंवा या साइटवर काही तुमच्या स्क्रीन रीडर, स्विच अॅक्सेस, किंवा
+  इतर कोणत्याही सहाय्यक तंत्रज्ञानासोबत काम करत नसेल, तर कृपया आम्हाला सांगा —
+  ईमेल करा <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+  तुमचे डिव्हाइस आणि तुम्ही काय वापरत होता (उदा. Android वर TalkBack) सांगणे
+  उपयोगी ठरते जेणेकरून आम्ही ते पुन्हा पाहू शकू. आम्ही यांना प्राधान्याचे
+  रिपोर्ट मानतो, नियमित अभिप्राय नाही.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Zebal वर परत जा</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

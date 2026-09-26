@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sanjeev.spendify",
+      "sha256_cert_fingerprints": [
+        "A1:88:2F:12:58:86:0F:E2:58:7A:F2:D2:DF:8A:6D:AC:B2:C8:85:94:DB:69:DF:65:E1:17:A0:92:0A:4F:54:A8",
+        "01:23:5F:93:0B:22:3B:FA:CC:6D:8B:64:5C:9D:B7:7E:26:49:36:09:67:B5:70:C1:3D:01:20:4D:EA:C6:23:67",
+        "29:E4:09:44:4C:4C:F4:7C:20:E1:6D:82:BA:93:AF:9B:20:2C:3F:51:A2:5F:A0:88:B7:6E:17:36:97:CF:5B:A8"
+      ]
+    }
+  }
+]

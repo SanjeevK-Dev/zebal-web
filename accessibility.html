@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>Accessibility — Zebal</title>
+<meta name="description" content="Zebal's accessibility features, the standard we build to, how we test, and how to report a problem.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/accessibility.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/accessibility.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/accessibility.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/accessibility.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/accessibility.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/accessibility.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/accessibility.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/accessibility.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/accessibility.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+    --note-bg: #EAF3FB; --note-border: #9EC5E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+      --note-bg: #16232E; --note-border: #2C4A66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  .intro { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 10px; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="Choose a language"></select>
+  <noscript><a href="/hi/accessibility.html">हिंदी में पढ़ें</a></noscript>
+</div>
+
+<h1>Accessibility</h1>
+<p class="intro">What Zebal does for accessibility, honestly — including what we haven't gotten to yet.</p>
+
+<main id="main">
+
+<h2>Our commitment</h2>
+<p>
+  Zebal was built with screen reader users, low-vision users, and anyone
+  who finds typing difficult in mind from the start — not added on
+  afterwards. Voice input exists because typing every expense is a real
+  barrier for a lot of people, not just a convenience feature.
+</p>
+
+<h2>What's built in</h2>
+<ul>
+  <li><strong>Screen reader support.</strong> Every control is labelled, and TalkBack is tested against the app directly as features are built, not just checked afterwards.</li>
+  <li><strong>Adjustable text size.</strong> Text follows your device's own font size setting rather than a fixed size baked into the app.</li>
+  <li><strong>Dark mode.</strong> A full dark theme, not just an inverted colour filter.</li>
+  <li><strong>Minimum touch target size.</strong> Buttons and tappable controls are sized so they're easy to hit reliably, including for anyone with limited fine motor control.</li>
+  <li><strong>Never colour alone.</strong> Anywhere status is shown with colour (like a settled vs. unpaid split), it's also said in text — colour is never the only signal.</li>
+  <li><strong>Voice in more than one language.</strong> Speaking an expense works in English, Hindi and other languages, so you're not limited to typing in one script.</li>
+</ul>
+
+<h2>The standard we build to</h2>
+<p>
+  We build against <strong>WCAG 2.1 Level AA</strong> as our internal
+  benchmark — the same standard used throughout the app's own code and this
+  website (contrast ratios, focus indication, touch target sizing).
+</p>
+<div class="note">
+  <p>
+    To be upfront: this is a standard we hold ourselves to, not a
+    certification. Zebal has not been through a formal third-party
+    accessibility audit. What's here reflects genuine, ongoing effort by a
+    small team — not a compliance guarantee.
+  </p>
+</div>
+
+<h2>How we test</h2>
+<p>
+  Mainly by using TalkBack on real Android devices while building each
+  feature, rather than testing only at the end. Keyboard and switch-style
+  navigation are checked where relevant. We also rely on people who use these
+  tools day to day telling us when something doesn't work — see
+  "Report a problem" below.
+</p>
+
+<h2>This website</h2>
+<p>
+  The same principles apply here: every text/background colour pair meets
+  the 4.5:1 contrast minimum, focus is always visible when navigating by
+  keyboard, a skip link lets you jump straight past the header, and text
+  sizes use rem units so your browser's own text-size setting keeps working.
+</p>
+
+<h2>Known limitations</h2>
+<ul>
+  <li>Zebal is Android only right now — there's no iOS version, so nothing here has been tested against VoiceOver.</li>
+  <li>Receipt Scan doesn't add its own description of a scanned photo — reading a receipt image aloud relies on your device's own built-in "describe image" feature rather than something we've custom-built.</li>
+  <li>As above, there's no independent accessibility audit yet. If you rely on assistive technology and hit something that doesn't work, we would genuinely like to know — that's more useful to us than a badge saying everything's fine.</li>
+</ul>
+
+<h2>Report a problem</h2>
+<p>
+  If something in the app or on this site doesn't work with your screen
+  reader, switch access, or any other assistive technology, please tell us —
+  email <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>.
+  It helps to mention your device and what you were using (e.g. TalkBack on
+  Android) so we can reproduce it. We treat these as priority reports, not
+  routine feedback.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Back to Zebal</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>

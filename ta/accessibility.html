@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<title>அணுகல்தன்மை — Zebal</title>
+<meta name="description" content="Zebal இன் அணுகல்தன்மை அம்சங்கள், நாங்கள் கடைப்பிடிக்கும் தரநிலை, நாங்கள் எவ்வாறு சோதிக்கிறோம், மற்றும் சிக்கலை எப்படித் தெரிவிப்பது.">
+<link rel="alternate" hreflang="en" href="https://zebal.in/accessibility.html">
+<link rel="alternate" hreflang="hi" href="https://zebal.in/hi/accessibility.html">
+<link rel="alternate" hreflang="mr" href="https://zebal.in/mr/accessibility.html">
+<link rel="alternate" hreflang="ta" href="https://zebal.in/ta/accessibility.html">
+<link rel="alternate" hreflang="te" href="https://zebal.in/te/accessibility.html">
+<link rel="alternate" hreflang="kn" href="https://zebal.in/kn/accessibility.html">
+<link rel="alternate" hreflang="bn" href="https://zebal.in/bn/accessibility.html">
+<link rel="alternate" hreflang="gu" href="https://zebal.in/gu/accessibility.html">
+<link rel="alternate" hreflang="x-default" href="https://zebal.in/accessibility.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<style>
+  :root {
+    --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
+    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+    --note-bg: #EAF3FB; --note-border: #9EC5E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
+      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+      --note-bg: #16232E; --note-border: #2C4A66;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Devanagari", sans-serif;
+    font-size: 1rem; line-height: 1.7;
+    color: var(--text); background: var(--bg);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px; }
+  .skip-link {
+    position: absolute; left: -9999px;
+    background: var(--primary); color: #fff;
+    padding: 12px 20px; border-radius: 6px; z-index: 100;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+  h1 { font-size: 2rem; margin: 32px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 36px 0 12px; }
+  .intro { color: var(--text-muted); margin: 0 0 32px; }
+  a { color: var(--primary); }
+  a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 10px; }
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 10px; }
+  .back { display: inline-block; margin: 40px 0 24px; }
+  .lang-switch {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.9rem; margin: 0 0 16px; color: var(--text-muted);
+  }
+  .lang-switch select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; min-height: 36px;
+  }
+  .lang-switch select:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+  .lang-switch noscript a { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">முதன்மை உள்ளடக்கத்திற்குச் செல்க</a>
+
+<div class="container">
+
+<div class="lang-switch">
+  <label for="langSelect">🌐</label>
+  <select id="langSelect" aria-label="மொழியைத் தேர்ந்தெடுக்கவும்"></select>
+  <noscript><a href="/accessibility.html">Read this page in English</a></noscript>
+</div>
+
+<h1>அணுகல்தன்மை</h1>
+<p class="intro">Zebal அணுகல்தன்மைக்காக என்ன செய்கிறது, நேர்மையாக — இன்னும் முடிக்கப்படாதவை உட்பட.</p>
+
+<main id="main">
+
+<h2>எங்கள் அர்ப்பணிப்பு</h2>
+<p>
+  Zebal தொடக்கத்திலிருந்தே திரை வாசிப்பான் பயனர்கள், குறைந்த பார்வையுடையவர்கள்,
+  மற்றும் தட்டச்சு செய்வதைக் கடினமாகக் கருதும் எவரையும் மனதில் கொண்டு
+  உருவாக்கப்பட்டது — பின்னர் சேர்க்கப்பட்டதல்ல. குரல் உள்ளீடு உள்ளது ஏனெனில்
+  ஒவ்வொரு செலவையும் தட்டச்சு செய்வது பலருக்கும் உண்மையான தடையாக இருக்கிறது,
+  வெறும் வசதி அம்சம் அல்ல.
+</p>
+
+<h2>உள்ளமைந்திருப்பவை</h2>
+<ul>
+  <li><strong>திரை வாசிப்பான் ஆதரவு.</strong> ஒவ்வொரு கட்டுப்பாடும் லேபிள் செய்யப்பட்டுள்ளது, மேலும் அம்சங்கள் உருவாக்கப்படும்போதே TalkBack நேரடியாக ஆப்பில் சோதிக்கப்படுகிறது, பின்னர் மட்டும் சரிபார்க்கப்படவில்லை.</li>
+  <li><strong>மாற்றக்கூடிய எழுத்து அளவு.</strong> ஆப்பில் நிலையான அளவுக்குப் பதிலாக, உங்கள் சாதனத்தின் சொந்த எழுத்துரு அளவு அமைப்பை உரை பின்பற்றுகிறது.</li>
+  <li><strong>இருண்ட பயன்முறை.</strong> முழுமையான இருண்ட தீம், வெறும் தலைகீழாக்கப்பட்ட வண்ணத் திரை அல்ல.</li>
+  <li><strong>குறைந்தபட்ச தொடு இலக்கு அளவு.</strong> பொத்தான்களும் தட்டக்கூடிய கட்டுப்பாடுகளும், வரையறுக்கப்பட்ட சிறு தசை இயக்கக் கட்டுப்பாடு உள்ளவர்களுக்கும் உட்பட எளிதாக அழுத்தும் அளவில் அமைக்கப்பட்டுள்ளன.</li>
+  <li><strong>வண்ணம் மட்டும் ஒருபோதும் இல்லை.</strong> நிலை வண்ணத்தில் காட்டப்படும் இடங்களில் (எ.கா. தீர்க்கப்பட்ட மற்றும் செலுத்தப்படாத பிரிவு), அது உரையிலும் கூறப்படுகிறது — வண்ணம் மட்டுமே சமிக்ஞையாக ஒருபோதும் இருப்பதில்லை.</li>
+  <li><strong>ஒன்றுக்கு மேற்பட்ட மொழிகளில் குரல்.</strong> செலவைப் பேசிச் சொல்வது ஆங்கிலம், இந்தி மற்றும் பிற மொழிகளில் செயல்படுகிறது, எனவே நீங்கள் ஒரே எழுத்துருவில் தட்டச்சு செய்வதற்கு மட்டும் மட்டுப்படுத்தப்படவில்லை.</li>
+</ul>
+
+<h2>நாங்கள் கடைப்பிடிக்கும் தரநிலை</h2>
+<p>
+  நாங்கள் <strong>WCAG 2.1 Level AA</strong>-ஐ எங்கள் உள் அளவுகோலாகக் கொண்டு
+  உருவாக்குகிறோம் — ஆப்பின் சொந்தக் குறியீட்டிலும் இந்த வலைத்தளத்திலும்
+  (கண்ட்ராஸ்ட் விகிதங்கள், ஃபோகஸ் குறியீடு, தொடு இலக்கு அளவு) பயன்படுத்தப்படும்
+  அதே தரநிலை இது.
+</p>
+<div class="note">
+  <p>
+    வெளிப்படையாகச் சொல்வதென்றால்: இது நாங்கள் எங்களுக்கே விதித்துக் கொண்ட
+    தரநிலை, சான்றளிப்பு அல்ல. Zebal எந்த முறையான மூன்றாம் தரப்பு
+    அணுகல்தன்மை தணிக்கையையும் கடந்து செல்லவில்லை. இங்கு உள்ளவை ஒரு சிறிய
+    குழுவின் உண்மையான, தொடர்ச்சியான முயற்சியைப் பிரதிபலிக்கின்றன —
+    இணக்கத்திற்கான உத்தரவாதம் அல்ல.
+  </p>
+</div>
+
+<h2>நாங்கள் எவ்வாறு சோதிக்கிறோம்</h2>
+<p>
+  முக்கியமாக ஒவ்வொரு அம்சத்தையும் உருவாக்கும்போது உண்மையான Android
+  சாதனங்களில் TalkBack-ஐப் பயன்படுத்துவதன் மூலம், முடிவில் மட்டும் சோதிப்பதற்குப்
+  பதிலாக. பொருத்தமான இடங்களில் விசைப்பலகை மற்றும் ஸ்விட்ச்-பாணி வழிசெலுத்தல்
+  சரிபார்க்கப்படுகிறது. இந்தக் கருவிகளை தினமும் பயன்படுத்துபவர்கள் ஏதேனும்
+  வேலை செய்யவில்லை என்று எங்களிடம் சொல்வதையும் நாங்கள் நம்பியிருக்கிறோம் —
+  கீழே "சிக்கலைத் தெரிவிக்கவும்" பார்க்கவும்.
+</p>
+
+<h2>இந்த வலைத்தளம்</h2>
+<p>
+  இங்கும் அதே கொள்கைகள் பொருந்தும்: ஒவ்வொரு உரை/பின்னணி வண்ண இணையும் 4.5:1
+  குறைந்தபட்ச கண்ட்ராஸ்டை பூர்த்தி செய்கிறது, விசைப்பலகை மூலம் வழிசெலுத்தும்போது
+  ஃபோகஸ் எப்போதும் தெரியும், ஒரு ஸ்கிப் இணைப்பு உங்களை தலைப்பைத் தாண்டி
+  நேரடியாகச் செல்ல அனுமதிக்கிறது, மேலும் உரை அளவுகள் rem அலகுகளைப்
+  பயன்படுத்துகின்றன, எனவே உங்கள் உலாவியின் சொந்த உரை-அளவு அமைப்பு தொடர்ந்து
+  செயல்படுகிறது.
+</p>
+
+<h2>அறியப்பட்ட வரம்புகள்</h2>
+<ul>
+  <li>Zebal தற்போது Android மட்டுமே — இதற்கு iOS பதிப்பு இல்லை, எனவே இங்குள்ள எதுவும் VoiceOver-க்கு எதிராக சோதிக்கப்படவில்லை.</li>
+  <li>Receipt Scan ஸ்கேன் செய்யப்பட்ட புகைப்படத்திற்கான சொந்த விளக்கத்தைச் சேர்க்காது — ரசீதுப் படத்தை உரக்கப் படிப்பது, நாங்கள் தனிப்பயனாக உருவாக்கிய ஒன்றைச் சார்ந்திருப்பதற்குப் பதிலாக, உங்கள் சாதனத்தின் சொந்த உள்ளமைந்த "படத்தை விவரிக்கவும்" அம்சத்தைச் சார்ந்துள்ளது.</li>
+  <li>மேலே கூறியது போல, இதுவரை சுயாதீன அணுகல்தன்மை தணிக்கை இல்லை. நீங்கள் உதவி தொழில்நுட்பத்தை நம்பியிருந்து ஏதேனும் வேலை செய்யாததைக் கண்டால், அதை நாங்கள் உண்மையிலேயே அறிய விரும்புகிறோம் — "எல்லாம் நன்றாக உள்ளது" என்று சொல்லும் பேட்ஜை விட அது எங்களுக்கு அதிகம் பயனுள்ளதாக இருக்கும்.</li>
+</ul>
+
+<h2>சிக்கலைத் தெரிவிக்கவும்</h2>
+<p>
+  ஆப்பில் அல்லது இந்தத் தளத்தில் ஏதேனும் உங்கள் திரை வாசிப்பான், ஸ்விட்ச்
+  அணுகல், அல்லது வேறு எந்த உதவி தொழில்நுட்பத்துடனும் வேலை செய்யவில்லை எனில்,
+  தயவுசெய்து எங்களிடம் சொல்லுங்கள் — <a href="mailto:quickconnect82@gmail.com">quickconnect82@gmail.com</a>
+  என்ற முகவரிக்கு மின்னஞ்சல் அனுப்பவும். உங்கள் சாதனத்தையும் நீங்கள் எதைப்
+  பயன்படுத்திக் கொண்டிருந்தீர்கள் என்பதையும் (எ.கா. Android-இல் TalkBack)
+  குறிப்பிடுவது, நாங்கள் அதை மீண்டும் உருவாக்க உதவும். நாங்கள் இவற்றை
+  முன்னுரிமை அறிக்கைகளாகக் கருதுகிறோம், வழக்கமான கருத்துகளாக அல்ல.
+</p>
+
+</main>
+
+<p class="back"><a href="index.html">&larr; Zebal-க்குத் திரும்பு</a></p>
+
+</div>
+
+<script src="/lang.js?v=7" defer></script>
+
+</body>
+</html>
