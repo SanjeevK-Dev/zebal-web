@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#007373" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
 <title>નિયમો અને શરતો — Zebal</title>
 <meta name="description" content="Zebal એપ્લિકેશન વાપરતી વખતે તમે જે શરતોને સંમતિ આપો છો.">
@@ -20,13 +22,13 @@
 <style>
   :root {
     --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
-    --text-muted: #616061; --primary: #0A66C2; --border: #E1E4E8;
+    --text-muted: #616061; --primary: #007373; --on-primary: #FFFFFF; --border: #E1E4E8;
     --note-bg: #FFF8E1; --note-border: #F0C36D;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
-      --text-muted: #A0A0A0; --primary: #669DF6; --border: #333333;
+      --text-muted: #A0A0A0; --primary: #4DB6AC; --on-primary: #062525; --border: #333333;
       --note-bg: #2A2416; --note-border: #7A6320;
     }
   }
@@ -40,7 +42,7 @@
   .container { max-width: 720px; margin: 0 auto; padding: 24px; }
   .skip-link {
     position: absolute; left: -9999px;
-    background: var(--primary); color: #fff;
+    background: var(--primary); color: var(--on-primary);
     padding: 12px 20px; border-radius: 6px; z-index: 100;
   }
   .skip-link:focus { left: 16px; top: 16px; }
@@ -60,11 +62,11 @@
   }
   .callout p { margin: 0; }
   .note {
-    background: #EAF3FB; border: 1px solid #9EC5E8;
+    background: #E6F4F3; border: 1px solid #8CCBC6;
     border-radius: 8px; padding: 16px 20px; margin: 20px 0;
   }
   @media (prefers-color-scheme: dark) {
-    .note { background: #16232E; border-color: #2C4A66; }
+    .note { background: #132726; border-color: #2E5C58; }
   }
   .note p { margin: 0; }
   .back { display: inline-block; margin: 40px 0 24px; }

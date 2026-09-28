@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#007373" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
 <title>Join a group on Zebal</title>
 <meta name="description" content="You've been invited to a shared expense group on Zebal.">
@@ -12,13 +14,13 @@
 <style>
   :root {
     --bg: #F6F8FA; --surface: #FFFFFF; --text: #1D1C1D;
-    --text-muted: #616061; --primary: #0A66C2; --primary-dark: #084E96;
+    --text-muted: #616061; --primary: #007373; --on-primary: #FFFFFF; --primary-dark: #005C5C;
     --border: #E1E4E8;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #121212; --surface: #1E1E1E; --text: #E3E3E3;
-      --text-muted: #A0A0A0; --primary: #669DF6; --primary-dark: #8AB4F8;
+      --text-muted: #A0A0A0; --primary: #4DB6AC; --on-primary: #062525; --primary-dark: #80CBC4;
       --border: #333333;
     }
   }
@@ -35,7 +37,7 @@
 
   .cta {
     display: inline-block;
-    background: var(--primary); color: #FFFFFF;
+    background: var(--primary); color: var(--on-primary);
     text-decoration: none;
     padding: 16px 32px; border-radius: 8px;
     font-weight: 600; font-size: 1.05rem; min-height: 48px;

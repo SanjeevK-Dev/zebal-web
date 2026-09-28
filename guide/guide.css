@@ -14,11 +14,11 @@
   --surface: #FFFFFF;
   --text: #1D1C1D;
   --text-muted: #616061;
-  --primary: #0A66C2;
-  --primary-dark: #084E96;
+  --primary: #007373; --on-primary: #FFFFFF;
+  --primary-dark: #005C5C;
   --border: #E1E4E8;
-  --note-bg: #EAF3FB;
-  --note-border: #9EC5E8;
+  --note-bg: #E6F4F3;
+  --note-border: #8CCBC6;
   --warn-bg: #FFF8E1;
   --warn-border: #F0C36D;
 }
@@ -29,11 +29,11 @@
     --surface: #1E1E1E;
     --text: #E3E3E3;
     --text-muted: #A0A0A0;
-    --primary: #669DF6;
-    --primary-dark: #8AB4F8;
+    --primary: #4DB6AC; --on-primary: #062525;
+    --primary-dark: #80CBC4;
     --border: #333333;
-    --note-bg: #16232E;
-    --note-border: #2C4A66;
+    --note-bg: #132726;
+    --note-border: #2E5C58;
     --warn-bg: #2A2416;
     --warn-border: #7A6320;
   }
@@ -56,7 +56,7 @@ body {
    Visible only when focused. */
 .skip-link {
   position: absolute; left: -9999px;
-  background: var(--primary); color: #fff;
+  background: var(--primary); color: var(--on-primary);
   padding: 12px 20px; border-radius: 6px; z-index: 100;
 }
 .skip-link:focus { left: 16px; top: 16px; }
@@ -166,3 +166,16 @@ footer {
   flex-wrap: wrap;
 }
 .next-prev a { min-height: 48px; display: inline-flex; align-items: center; }
+
+/* Screenshots. Phone screenshots are tall, so they are shown at a phone-like
+   width instead of their full pixel size — at full size they overflowed small
+   screens (forcing sideways scrolling) and filled the whole page on desktop.
+   width/height attributes in the HTML reserve the space before the image
+   loads, so the text below doesn't jump. */
+.shot { margin: 24px 0; text-align: center; }
+.shot img {
+  display: block; margin: 0 auto;
+  max-width: min(100%, 320px); width: auto; height: auto;
+  border: 1px solid var(--border); border-radius: 12px;
+}
+.shot figcaption { margin-top: 8px; font-size: 0.9rem; color: var(--text-muted); }

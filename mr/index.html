@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#007373" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
 <title>झेबल — कोणत्याही भाषेत, बोलून खर्चाचा मागोवा घ्या</title>
 <meta name="description" content="झेबल हे सर्वांसाठी बनवलेले खर्च ट्रॅकर आहे. बोलून खर्च जोडा, ग्रुपसोबत बिल वाटून घ्या, आणि AI कडून माहिती मिळवा. स्क्रीन रीडरसह पूर्णपणे सुलभ.">
@@ -35,8 +37,8 @@
     --surface: #FFFFFF;
     --text: #1D1C1D;
     --text-muted: #616061;
-    --primary: #0A66C2;
-    --primary-dark: #084E96;
+    --primary: #007373; --on-primary: #FFFFFF;
+    --primary-dark: #005C5C;
     --border: #E1E4E8;
   }
 
@@ -46,8 +48,8 @@
       --surface: #1E1E1E;
       --text: #E3E3E3;
       --text-muted: #A0A0A0;
-      --primary: #669DF6;
-      --primary-dark: #8AB4F8;
+      --primary: #4DB6AC; --on-primary: #062525;
+      --primary-dark: #80CBC4;
       --border: #333333;
     }
   }
@@ -67,7 +69,7 @@
 
   .skip-link {
     position: absolute; left: -9999px;
-    background: var(--primary); color: #fff;
+    background: var(--primary); color: var(--on-primary);
     padding: 12px 20px; border-radius: 6px; z-index: 100;
   }
   .skip-link:focus { left: 16px; top: 16px; }
@@ -85,6 +87,7 @@
   .lang-switch noscript a { color: var(--primary); }
 
   header { text-align: center; padding: 32px 0 32px; }
+  a { color: var(--primary); }
   .logo-mark { display: block; margin: 0 auto 16px; }
 
   h1 { font-size: 2.2rem; margin: 0 0 12px; line-height: 1.25; }
@@ -101,7 +104,7 @@
   .cta {
     display: inline-block;
     background: var(--primary);
-    color: #FFFFFF;
+    color: var(--on-primary);
     text-decoration: none;
     padding: 16px 32px;
     border-radius: 8px;
@@ -176,13 +179,13 @@
   </div>
 
   <header>
-    <svg class="logo-mark" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle">
+    <svg class="logo-mark" width="64" height="64" viewBox="0 0 512 512" role="img" aria-labelledby="logoTitle">
       <title id="logoTitle">Zebal logo</title>
-      <rect width="64" height="64" rx="16" fill="var(--primary)"/>
-      <text x="26" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
-      <rect x="45" y="30" width="3.5" height="10" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
-      <rect x="51" y="24" width="3.5" height="22" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
-      <rect x="57" y="34" width="3.5" height="6" rx="1.75" fill="#FFFFFF" opacity="0.9"/>
+      <!-- Same mark as the app's launcher / Play Store icon: a white wallet
+           on teal #008080. The teal is fixed (not var(--primary)) so the logo
+           looks identical to the app icon in both light and dark mode. -->
+      <rect width="512" height="512" rx="128" fill="#008080"/>
+      <path transform="translate(114.7 114.7) scale(11.78)" fill="#FFFFFF" d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
     </svg>
 
     <p class="greeting" id="greeting"></p>
